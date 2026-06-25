@@ -1,0 +1,352 @@
+{
+  "prompt": "通俗易懂地解释词向量（Word Embedding）的基本概念",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "通俗易懂地解释词向量（Word Embedding）",
+    "language": "zh",
+    "visual_type": "concept",
+    "narrative": "通过从文本到数值的转换，展示词向量如何让计算机理解词语的语义关系",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "词向量 Word Embedding",
+        "summary": "主标题，介绍主题",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "problem",
+        "role": "card",
+        "label": "计算机的困境",
+        "summary": "计算机只能处理数字，无法直接理解文本词语",
+        "order": 1,
+        "importance": "primary",
+        "connects": [
+          "title"
+        ]
+      },
+      {
+        "id": "arrow_1",
+        "role": "connector",
+        "label": "→",
+        "summary": "引导到解决方案",
+        "order": 2,
+        "importance": "secondary",
+        "connects": [
+          "problem"
+        ]
+      },
+      {
+        "id": "solution",
+        "role": "focal",
+        "label": "词向量 = 词语的数字表示",
+        "summary": "核心概念：将词语转换为数值向量",
+        "order": 3,
+        "importance": "primary",
+        "connects": [
+          "problem"
+        ]
+      },
+      {
+        "id": "word_cat",
+        "role": "process-node",
+        "label": "猫",
+        "summary": "示例词语：猫",
+        "order": 4,
+        "importance": "secondary",
+        "connects": [
+          "solution"
+        ]
+      },
+      {
+        "id": "vector_cat",
+        "role": "process-node",
+        "label": "[0.2, 0.8, -0.1]",
+        "summary": "猫对应的向量表示",
+        "order": 5,
+        "importance": "secondary",
+        "connects": [
+          "word_cat"
+        ]
+      },
+      {
+        "id": "word_dog",
+        "role": "process-node",
+        "label": "狗",
+        "summary": "示例词语：狗",
+        "order": 6,
+        "importance": "secondary",
+        "connects": [
+          "solution"
+        ]
+      },
+      {
+        "id": "vector_dog",
+        "role": "process-node",
+        "label": "[0.3, 0.7, -0.2]",
+        "summary": "狗对应的向量表示",
+        "order": 7,
+        "importance": "secondary",
+        "connects": [
+          "word_dog"
+        ]
+      },
+      {
+        "id": "key_property",
+        "role": "card",
+        "label": "相似词 → 相似向量",
+        "summary": "核心特性：语义相近的词语在向量空间中距离也近",
+        "order": 8,
+        "importance": "primary",
+        "connects": [
+          "vector_cat",
+          "vector_dog"
+        ]
+      },
+      {
+        "id": "space_visual",
+        "role": "focal",
+        "label": "向量空间示意图",
+        "summary": "可视化展示词语在空间中的位置关系",
+        "order": 9,
+        "importance": "primary",
+        "connects": [
+          "key_property"
+        ]
+      },
+      {
+        "id": "example_king",
+        "role": "process-node",
+        "label": "国王",
+        "summary": "示例：国王",
+        "order": 10,
+        "importance": "supporting",
+        "connects": [
+          "space_visual"
+        ]
+      },
+      {
+        "id": "example_queen",
+        "role": "process-node",
+        "label": "女王",
+        "summary": "示例：女王",
+        "order": 11,
+        "importance": "supporting",
+        "connects": [
+          "space_visual"
+        ]
+      },
+      {
+        "id": "example_man",
+        "role": "process-node",
+        "label": "男人",
+        "summary": "示例：男人",
+        "order": 12,
+        "importance": "supporting",
+        "connects": [
+          "space_visual"
+        ]
+      },
+      {
+        "id": "example_woman",
+        "role": "process-node",
+        "label": "女人",
+        "summary": "示例：女人",
+        "order": 13,
+        "importance": "supporting",
+        "connects": [
+          "space_visual"
+        ]
+      },
+      {
+        "id": "relationship",
+        "role": "annotation",
+        "label": "国王 - 男人 + 女人 ≈ 女王",
+        "summary": "展示词向量的语义运算关系",
+        "order": 14,
+        "importance": "primary",
+        "connects": [
+          "example_king",
+          "example_queen",
+          "example_man",
+          "example_woman"
+        ]
+      },
+      {
+        "id": "applications",
+        "role": "card",
+        "label": "应用场景",
+        "summary": "词向量的实际应用：搜索、推荐、翻译、情感分析",
+        "order": 15,
+        "importance": "secondary",
+        "connects": [
+          "relationship"
+        ]
+      }
+    ],
+    "style_hints": [
+      "使用简洁的图标和色块",
+      "向量用带括号的数字数组表示",
+      "空间关系用二维坐标点展示",
+      "关键公式使用醒目颜色",
+      "从问题到解决方案的线性叙事"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 7,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0,
+        "duration": 0.6,
+        "reason": "主标题首先出现，建立主题"
+      },
+      {
+        "target_id": "problem",
+        "effect": "fade-slide",
+        "start": 0.7,
+        "duration": 0.5,
+        "reason": "引出计算机的困境，建立问题背景"
+      },
+      {
+        "target_id": "arrow_1",
+        "effect": "draw-line",
+        "start": 1.3,
+        "duration": 0.3,
+        "reason": "用箭头引导到解决方案，视觉连接自然"
+      },
+      {
+        "target_id": "solution",
+        "effect": "pop",
+        "start": 1.7,
+        "duration": 0.5,
+        "reason": "核心概念用弹出效果强调"
+      },
+      {
+        "target_id": "word_cat",
+        "effect": "fade-slide",
+        "start": 2.3,
+        "duration": 0.4,
+        "reason": "第一个示例词语出现"
+      },
+      {
+        "target_id": "vector_cat",
+        "effect": "fade-slide",
+        "start": 2.8,
+        "duration": 0.4,
+        "reason": "展示猫的向量表示，体现文本到数值的转换"
+      },
+      {
+        "target_id": "word_dog",
+        "effect": "fade-slide",
+        "start": 3.3,
+        "duration": 0.4,
+        "reason": "第二个示例词语出现"
+      },
+      {
+        "target_id": "vector_dog",
+        "effect": "fade-slide",
+        "start": 3.8,
+        "duration": 0.4,
+        "reason": "展示狗的向量表示"
+      },
+      {
+        "target_id": "key_property",
+        "effect": "highlight",
+        "start": 4.3,
+        "duration": 0.5,
+        "reason": "核心特性高亮显示：相似词→相似向量"
+      },
+      {
+        "target_id": "space_visual",
+        "effect": "fade-slide",
+        "start": 4.9,
+        "duration": 0.5,
+        "reason": "向量空间示意图出现，为后续示例提供背景"
+      },
+      {
+        "target_id": "example_king",
+        "effect": "fade-slide",
+        "start": 5.5,
+        "duration": 0.3,
+        "reason": "国王示例在空间中显示"
+      },
+      {
+        "target_id": "example_queen",
+        "effect": "fade-slide",
+        "start": 5.9,
+        "duration": 0.3,
+        "reason": "女王示例在空间中显示"
+      },
+      {
+        "target_id": "example_man",
+        "effect": "fade-slide",
+        "start": 6.3,
+        "duration": 0.3,
+        "reason": "男人示例在空间中显示"
+      },
+      {
+        "target_id": "example_woman",
+        "effect": "fade-slide",
+        "start": 6.7,
+        "duration": 0.3,
+        "reason": "女人示例在空间中显示"
+      },
+      {
+        "target_id": "relationship",
+        "effect": "highlight",
+        "start": 7.1,
+        "duration": 0.5,
+        "reason": "词向量运算公式高亮，展示语义运算能力"
+      },
+      {
+        "target_id": "applications",
+        "effect": "fade-slide",
+        "start": 7.7,
+        "duration": 0.5,
+        "reason": "应用场景收尾，展示实际价值"
+      }
+    ],
+    "final_frame_rule": "所有语义内容保持可见，公式和空间关系清晰可读"
+  },
+  "metrics": {
+    "elapsed_seconds": 189.27,
+    "geometry_error_count": 1,
+    "animation_error_count": 0,
+    "minimum_font_size": 14,
+    "final_text_count": 35,
+    "total_issues": 1
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_135520_通俗易懂地解释词向量_Word_Embedding_的基本概念.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_135520_通俗易懂地解释词向量_Word_Embedding_的基本概念.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_135520_通俗易懂地解释词向量_Word_Embedding_的基本概念.json",
+  "issues": [
+    {
+      "severity": "error",
+      "category": "container_overflow",
+      "element_id": "",
+      "description": "最终帧有 6 段文字超出所属卡片或节点边界。示例：[('applications', '搜索'), ('applications', '推荐'), ('applications', '翻译')]",
+      "fix_instruction": "保留当前视觉风格，缩短或换行溢出文字，并扩大或重新定位对应容器；禁止缩小字号。"
+    }
+  ],
+  "browser_metrics": {
+    "final_text_count": 35,
+    "final_essential_count": 13,
+    "final_container_count": 13,
+    "final_panel_count": 0,
+    "minimum_font_size": 14,
+    "geometry_error_count": 1,
+    "layout_penalty": 240,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 16,
+    "direct_animation_block_count": 13,
+    "direct_animation_animated_block_count": 13,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 9
+  }
+}

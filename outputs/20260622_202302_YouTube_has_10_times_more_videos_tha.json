@@ -1,0 +1,187 @@
+{
+  "prompt": "YouTube has 10 times more videos than TikTok, TikTok has 2 times more than Kuaishou",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "视频平台视频数量对比",
+    "language": "mixed",
+    "visual_type": "comparison",
+    "narrative": "通过对比展示YouTube、TikTok和快手三个平台的视频数量倍数关系",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "视频平台视频数量对比",
+        "summary": "主标题，说明这是三个平台的视频数量对比",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "youtube",
+        "role": "focal",
+        "label": "YouTube",
+        "summary": "YouTube拥有最多视频，是TikTok的10倍",
+        "order": 1,
+        "importance": "primary",
+        "connects": [
+          "tiktok"
+        ]
+      },
+      {
+        "id": "tiktok",
+        "role": "focal",
+        "label": "TikTok",
+        "summary": "TikTok视频数量是快手的2倍，是YouTube的1/10",
+        "order": 2,
+        "importance": "primary",
+        "connects": [
+          "youtube",
+          "kuaishou"
+        ]
+      },
+      {
+        "id": "kuaishou",
+        "role": "focal",
+        "label": "快手",
+        "summary": "快手视频数量最少，作为基准对比",
+        "order": 3,
+        "importance": "primary",
+        "connects": [
+          "tiktok"
+        ]
+      },
+      {
+        "id": "ratio_10x",
+        "role": "annotation",
+        "label": "10x",
+        "summary": "标注YouTube是TikTok的10倍",
+        "order": 4,
+        "importance": "primary",
+        "connects": [
+          "youtube",
+          "tiktok"
+        ]
+      },
+      {
+        "id": "ratio_2x",
+        "role": "annotation",
+        "label": "2x",
+        "summary": "标注TikTok是快手的2倍",
+        "order": 5,
+        "importance": "primary",
+        "connects": [
+          "tiktok",
+          "kuaishou"
+        ]
+      },
+      {
+        "id": "subtitle",
+        "role": "subtitle",
+        "label": "基于平台公开数据估算",
+        "summary": "数据来源说明",
+        "order": 6,
+        "importance": "supporting",
+        "connects": []
+      }
+    ],
+    "style_hints": [
+      "使用横向排列展示数量倍数关系",
+      "大圆点代表YouTube，中等圆点代表TikTok，小圆点代表快手",
+      "倍数关系用箭头或连接线标注",
+      "动画效果：按顺序依次显示各平台",
+      "配色：使用平台品牌色或渐变色区分"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 3.5,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade",
+        "start": 0.0,
+        "duration": 0.5,
+        "reason": "Title appears first to establish the comparison topic"
+      },
+      {
+        "target_id": "youtube",
+        "effect": "fade-slide",
+        "start": 0.5,
+        "duration": 0.5,
+        "reason": "YouTube appears first as the largest platform (10x TikTok)"
+      },
+      {
+        "target_id": "tiktok",
+        "effect": "fade-slide",
+        "start": 1.0,
+        "duration": 0.5,
+        "reason": "TikTok appears second showing 2x Kuaishou relationship"
+      },
+      {
+        "target_id": "kuaishou",
+        "effect": "fade-slide",
+        "start": 1.5,
+        "duration": 0.5,
+        "reason": "Kuaishou appears last as the baseline for comparison"
+      },
+      {
+        "target_id": "ratio_10x",
+        "effect": "draw-line",
+        "start": 2.0,
+        "duration": 0.4,
+        "reason": "10x annotation draws after all platforms are visible to show YouTube-TikTok relationship"
+      },
+      {
+        "target_id": "ratio_2x",
+        "effect": "draw-line",
+        "start": 2.4,
+        "duration": 0.4,
+        "reason": "2x annotation draws to show TikTok-Kuaishou relationship"
+      },
+      {
+        "target_id": "subtitle",
+        "effect": "fade",
+        "start": 2.8,
+        "duration": 0.5,
+        "reason": "Subtitle fades in last as supporting data source note"
+      }
+    ],
+    "final_frame_rule": "All semantic content remains visible and readable."
+  },
+  "metrics": {
+    "elapsed_seconds": 56.41,
+    "geometry_error_count": 0,
+    "animation_error_count": 1,
+    "minimum_font_size": 16.0,
+    "final_text_count": 10,
+    "total_issues": 1
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_202302_YouTube_has_10_times_more_videos_tha.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_202302_YouTube_has_10_times_more_videos_tha.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_202302_YouTube_has_10_times_more_videos_tha.json",
+  "issues": [
+    {
+      "severity": "error",
+      "category": "animation_sequence_flat",
+      "element_id": "",
+      "description": "Semantic text blocks do not reveal with clearly increasing delays in document reading order.",
+      "fix_instruction": "Use increasing animation-delay values so the title appears first and each major node/text block appears one by one along the logical flow."
+    }
+  ],
+  "browser_metrics": {
+    "final_text_count": 10,
+    "final_essential_count": 3,
+    "final_container_count": 3,
+    "final_panel_count": 0,
+    "minimum_font_size": 16,
+    "geometry_error_count": 0,
+    "layout_penalty": 0,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 7,
+    "direct_animation_block_count": 3,
+    "direct_animation_animated_block_count": 3,
+    "direct_animation_has_sequence": false,
+    "direct_animation_unique_delays": 3
+  }
+}

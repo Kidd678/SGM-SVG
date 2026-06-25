@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <style id="v2-motion-style">
+@keyframes v2FadeSlide { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes v2Pop { 0% { opacity: 0; transform: scale(.92); } 70% { opacity: 1; transform: scale(1.03); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes v2Fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes v2Draw { from { opacity: 1; stroke-dashoffset: 900; } to { opacity: 1; stroke-dashoffset: 0; } }
+@keyframes v2Highlight { 0% { opacity: 0; } 40% { opacity: 1; filter: brightness(1.18); } 100% { opacity: 1; filter: brightness(1); } }
+#title { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 0.00s; }
+#subtitle { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 0.50s; }
+#event_1924 { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.40s ease forwards; animation-delay: 1.00s; }
+#connector_1 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.30s ease forwards; animation-delay: 1.40s; }
+#event_1924_rename { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.40s ease forwards; animation-delay: 1.70s; }
+#connector_2 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.30s ease forwards; animation-delay: 2.10s; }
+#event_1930s { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.40s ease forwards; animation-delay: 2.40s; }
+#connector_3 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.30s ease forwards; animation-delay: 2.80s; }
+#event_1952 { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.40s ease forwards; animation-delay: 3.10s; }
+#connector_4 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.30s ease forwards; animation-delay: 3.50s; }
+#event_1978 { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.40s ease forwards; animation-delay: 3.80s; }
+#connector_5 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.30s ease forwards; animation-delay: 4.20s; }
+#event_1990s { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.40s ease forwards; animation-delay: 4.50s; }
+#connector_6 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.30s ease forwards; animation-delay: 4.90s; }
+#event_2017 { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.50s ease forwards; animation-delay: 5.20s; }
+</style><defs>
+    
+    <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#004D2F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#006633;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#008844;stop-opacity:1" />
+    </linearGradient>
+    
+    
+    <radialGradient id="primaryNodeGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00AA55;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#006633;stop-opacity:1" />
+    </radialGradient>
+    
+    
+    <radialGradient id="secondaryNodeGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#66CC88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#008844;stop-opacity:1" />
+    </radialGradient>
+    
+    
+    <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#006633" />
+    </marker>
+  </defs>
+  
+  
+  <rect width="1200" height="800" fill="#F8FAF9" />
+  
+  
+  <rect x="0" y="0" width="1200" height="8" fill="url(#timelineGradient)" />
+  
+  
+  <g id="title" data-role="title">
+    <text x="600" y="70" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="42" font-weight="bold" fill="#004D2F">中山大学的发展历程</text>
+  </g>
+  
+  
+  <g id="subtitle" data-role="subtitle">
+    <text x="600" y="115" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="22" fill="#006633">百年树人，砥砺前行</text>
+  </g>
+  
+  
+  <line x1="80" y1="400" x2="1120" y2="400" stroke="url(#timelineGradient)" stroke-width="4" marker-end="url(#arrowHead)" />
+  
+  
+  <g id="timeline_ticks">
+    <line x1="150" y1="390" x2="150" y2="410" stroke="#006633" stroke-width="2" />
+    <line x1="280" y1="390" x2="280" y2="410" stroke="#006633" stroke-width="2" />
+    <line x1="410" y1="390" x2="410" y2="410" stroke="#006633" stroke-width="2" />
+    <line x1="540" y1="390" x2="540" y2="410" stroke="#006633" stroke-width="2" />
+    <line x1="670" y1="390" x2="670" y2="410" stroke="#006633" stroke-width="2" />
+    <line x1="800" y1="390" x2="800" y2="410" stroke="#006633" stroke-width="2" />
+    <line x1="930" y1="390" x2="930" y2="410" stroke="#006633" stroke-width="2" />
+    <line x1="1060" y1="390" x2="1060" y2="410" stroke="#006633" stroke-width="2" />
+  </g>
+  
+  
+  <g id="event_1924" data-role="event">
+    <circle cx="150" cy="400" r="28" fill="url(#primaryNodeGradient)" />
+    <text x="150" y="405" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">1924</text>
+    <text x="150" y="458" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="bold" fill="#004D2F">创办</text>
+    <text x="150" y="482" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">国立广东大学成立</text>
+    <text x="150" y="502" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">开启百年征程</text>
+  </g>
+  
+  
+  <g id="connector_1" data-role="connector">
+    <line x1="178" y1="400" x2="222" y2="400" stroke="#006633" stroke-width="3" />
+  </g>
+  
+  
+  <g id="event_1924_rename" data-role="event">
+    <circle cx="280" cy="400" r="28" fill="url(#primaryNodeGradient)" />
+    <text x="280" y="405" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">1924</text>
+    <text x="280" y="458" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="bold" fill="#004D2F">更名</text>
+    <text x="280" y="482" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">国立中山大学</text>
+    <text x="280" y="502" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">以孙中山先生命名</text>
+  </g>
+  
+  
+  <g id="connector_2" data-role="connector">
+    <line x1="308" y1="400" x2="362" y2="400" stroke="#006633" stroke-width="3" />
+  </g>
+  
+  
+  <g id="event_1930s" data-role="event">
+    <circle cx="410" cy="400" r="22" fill="url(#secondaryNodeGradient)" />
+    <text x="410" y="443" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="bold" fill="#004D2F">1930-1940年代</text>
+    <text x="410" y="466" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">快速发展期</text>
+    <text x="410" y="486" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">学科建设初具规模</text>
+  </g>
+  
+  
+  <g id="connector_3" data-role="connector">
+    <line x1="432" y1="400" x2="492" y2="400" stroke="#006633" stroke-width="3" />
+  </g>
+  
+  
+  <g id="event_1952" data-role="event">
+    <circle cx="540" cy="400" r="22" fill="url(#secondaryNodeGradient)" />
+    <text x="540" y="443" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="bold" fill="#004D2F">1952年</text>
+    <text x="540" y="466" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">院系调整</text>
+    <text x="540" y="486" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">奠定现代学科布局</text>
+  </g>
+  
+  
+  <g id="connector_4" data-role="connector">
+    <line x1="562" y1="400" x2="622" y2="400" stroke="#006633" stroke-width="3" />
+  </g>
+  
+  
+  <g id="event_1978" data-role="event">
+    <circle cx="670" cy="400" r="22" fill="url(#secondaryNodeGradient)" />
+    <text x="670" y="443" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="bold" fill="#004D2F">1978年</text>
+    <text x="670" y="466" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">改革开放</text>
+    <text x="670" y="486" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">恢复高考，新机遇</text>
+  </g>
+  
+  
+  <g id="connector_5" data-role="connector">
+    <line x1="692" y1="400" x2="752" y2="400" stroke="#006633" stroke-width="3" />
+  </g>
+  
+  
+  <g id="event_1990s" data-role="event">
+    <circle cx="800" cy="400" r="22" fill="url(#secondaryNodeGradient)" />
+    <text x="800" y="443" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="bold" fill="#004D2F">1990年代</text>
+    <text x="800" y="466" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">211工程</text>
+    <text x="800" y="486" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">办学层次提升</text>
+  </g>
+  
+  
+  <g id="connector_6" data-role="connector">
+    <line x1="822" y1="400" x2="882" y2="400" stroke="#006633" stroke-width="3" />
+  </g>
+  
+  
+  <g id="event_2017" data-role="event">
+    <circle cx="930" cy="400" r="28" fill="url(#primaryNodeGradient)" />
+    <text x="930" y="405" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">2017</text>
+    <text x="930" y="458" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="bold" fill="#004D2F">双一流</text>
+    <text x="930" y="482" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">入选国家双一流</text>
+    <text x="930" y="502" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#555555">建设高校，开启新征程</text>
+  </g>
+  
+  
+  <g id="emblem_decoration" data-role="node">
+    <circle cx="1060" cy="400" r="18" fill="none" stroke="#006633" stroke-width="2" stroke-dasharray="4,4" />
+    <circle cx="1060" cy="400" r="8" fill="#006633" opacity="0.3" />
+  </g>
+</svg>

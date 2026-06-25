@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>动态 SVG 视觉叙事实验</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #65728a;
+      --line: #d8e0ec;
+      --accent: #0f7c6c;
+      --accent-soft: #dff4ef;
+      --warn: #b86b00;
+      --error: #b42318;
+      --ink: #0c1220;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    main {
+      width: min(1520px, calc(100% - 32px));
+      margin: 20px auto 28px;
+    }
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    h1 { margin: 0; font-size: 28px; letter-spacing: 0; }
+    .subtitle { color: var(--muted); margin-top: 4px; font-size: 14px; }
+    .workspace {
+      display: grid;
+      grid-template-columns: 390px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 14px 38px rgba(31, 45, 70, .08);
+    }
+    aside { padding: 16px; }
+    label {
+      display: block;
+      margin: 14px 0 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    textarea, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdff;
+      color: var(--text);
+      font: inherit;
+      padding: 11px 12px;
+    }
+    textarea {
+      min-height: 142px;
+      resize: vertical;
+      line-height: 1.55;
+    }
+    .examples {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--accent);
+      color: white;
+    }
+    button:disabled { opacity: .55; cursor: wait; }
+    .examples button, .secondary {
+      background: #edf3f9;
+      color: var(--ink);
+      text-align: left;
+      font-weight: 650;
+      font-size: 13px;
+    }
+    .toggle-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .toggle {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      color: var(--text);
+      font-size: 14px;
+    }
+    input[type="checkbox"] { width: 17px; height: 17px; accent-color: var(--accent); }
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .status {
+      margin-top: 12px;
+      padding: 10px 11px;
+      border-radius: 8px;
+      background: #f0f5fa;
+      color: var(--muted);
+      min-height: 40px;
+    }
+    .revision-box {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+    .revision-box textarea {
+      min-height: 82px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 9px;
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 44px;
+    }
+    .step.active { border-color: var(--accent); background: var(--accent-soft); color: var(--text); }
+    .step.done { border-color: #9bd9ca; color: #155c50; }
+    .preview {
+      min-height: 760px;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      overflow: hidden;
+    }
+    .preview-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .metrics {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .metric {
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: #eef3f7;
+    }
+    .canvas {
+      display: grid;
+      place-items: center;
+      padding: 14px;
+      overflow: auto;
+      background: #e8edf4;
+    }
+    .canvas svg {
+      width: min(100%, 1200px);
+      height: auto;
+      background: white;
+      box-shadow: 0 10px 30px rgba(25, 38, 61, .18);
+    }
+    .empty {
+      color: var(--muted);
+      text-align: center;
+      padding: 26px;
+    }
+    details {
+      margin-top: 14px;
+      color: var(--muted);
+    }
+    summary { cursor: pointer; font-weight: 700; }
+    pre {
+      max-height: 290px;
+      overflow: auto;
+      padding: 11px;
+      border-radius: 8px;
+      background: #0e1726;
+      color: #d8e7ff;
+      font-size: 12px;
+      white-space: pre-wrap;
+    }
+    .links a {
+      color: var(--accent);
+      font-weight: 700;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+    @media (max-width: 980px) {
+      .workspace { grid-template-columns: 1fr; }
+      .preview { min-height: 560px; }
+      header { align-items: start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>动态 SVG 视觉叙事实验室</h1>
+      <div class="subtitle">语义场景图 + 静态 SVG + 动画计划 + 浏览器反馈</div>
+    </div>
+    <div class="links" id="fileLinks"></div>
+  </header>
+  <section class="workspace">
+    <aside class="panel">
+      <label for="prompt">提示词</label>
+      <textarea id="prompt">大语言模型的基本原理</textarea>
+      <div class="examples">
+        <button type="button" data-prompt="大语言模型的基本原理">1. 大语言模型的基本原理</button>
+        <button type="button" data-prompt="通俗易懂地解释词向量（Word Embedding）的基本概念">2. 词向量基本概念</button>
+        <button type="button" data-prompt="中山大学的发展历程">3. 中山大学的发展历程</button>
+        <button type="button" data-prompt="绘制 SVG 流程图，展示从一颗咖啡豆到一杯咖啡的完整生产链（种植、采摘、烘焙、研磨、冲煮）">4. 咖啡生产链</button>
+        <button type="button" data-prompt="YouTube has 10 times more videos than TikTok, TikTok has 2 times more than Kuaishou">5. 平台数量比较</button>
+      </div>
+
+      <label for="model">模型</label>
+      <select id="model"></select>
+
+      <div class="toggle-row">
+        <label class="toggle"><input id="useLlmMotion" type="checkbox" checked> 使用大模型动画规划器</label>
+        <label class="toggle"><input id="repairStatic" type="checkbox" checked> 启用浏览器反馈修复</label>
+      </div>
+
+      <div class="actions">
+        <button id="generate">生成动态 SVG</button>
+        <button class="secondary" id="downloadSvg" hidden>下载 SVG</button>
+        <button class="secondary" id="downloadJson" hidden>下载报告</button>
+      </div>
+      <div class="revision-box">
+        <label for="revisionInput">最后一次人工修改意见</label>
+        <textarea id="revisionInput" placeholder="例如：把整体颜色改成蓝绿色；让标题更醒目；减少右侧文字；把最后一个节点放大。"></textarea>
+        <div class="actions">
+          <button class="secondary" id="reviseBtn" disabled>基于当前结果修改一次</button>
+        </div>
+      </div>
+      <div class="status" id="status">准备就绪</div>
+      <div class="steps" id="steps"></div>
+
+      <details open>
+        <summary>语义场景图 / 动画计划</summary>
+        <pre id="intermediate">尚未生成</pre>
+      </details>
+      <details>
+        <summary>质量问题</summary>
+        <pre id="issues">[]</pre>
+      </details>
+    </aside>
+    <section class="preview panel">
+      <div class="preview-toolbar">
+        <div class="metrics" id="metrics"></div>
+        <div class="subtitle" id="elapsed"></div>
+      </div>
+      <div class="canvas" id="canvas">
+        <div class="empty">生成后的动态 SVG 会显示在这里</div>
+      </div>
+    </section>
+  </section>
+</main>
+<script>
+const $ = selector => document.querySelector(selector);
+const promptEl = $("#prompt");
+const modelEl = $("#model");
+const useLlmMotionEl = $("#useLlmMotion");
+const repairStaticEl = $("#repairStatic");
+const generateBtn = $("#generate");
+const statusEl = $("#status");
+const stepsEl = $("#steps");
+const intermediateEl = $("#intermediate");
+const issuesEl = $("#issues");
+const canvasEl = $("#canvas");
+const metricsEl = $("#metrics");
+const elapsedEl = $("#elapsed");
+const fileLinksEl = $("#fileLinks");
+const downloadSvgBtn = $("#downloadSvg");
+const downloadJsonBtn = $("#downloadJson");
+const revisionInputEl = $("#revisionInput");
+const reviseBtn = $("#reviseBtn");
+
+let latestSvg = "";
+let latestReport = null;
+let latestResult = null;
+
+const stageLabels = {
+  scene: "语义场景图",
+  svg: "静态 SVG",
+  motion: "动画计划",
+  qa: "浏览器质检",
+  repair: "局部修复"
+};
+
+document.querySelectorAll("[data-prompt]").forEach(button => {
+  button.addEventListener("click", () => {
+    promptEl.value = button.dataset.prompt;
+    promptEl.focus();
+  });
+});
+
+function setBusy(isBusy) {
+  generateBtn.disabled = isBusy;
+  modelEl.disabled = isBusy;
+  useLlmMotionEl.disabled = isBusy;
+  repairStaticEl.disabled = isBusy;
+  reviseBtn.disabled = isBusy || !latestResult;
+}
+
+function mark(eventName, data) {
+  const [stage, state] = eventName.split("_");
+  let row = stepsEl.querySelector(`[data-stage="${stage}"]`);
+  if (!row) {
+    row = document.createElement("div");
+    row.className = "step";
+    row.dataset.stage = stage;
+    stepsEl.append(row);
+  }
+  row.className = `step ${state === "start" ? "active" : "done"}`;
+  const suffix = data.geometry_error_count !== undefined
+    ? ` | 几何错误 ${data.geometry_error_count}，动画错误 ${data.animation_error_count}`
+    : "";
+  row.textContent = `${stageLabels[stage] || stage}${suffix}`;
+  if (data.result) {
+    const current = intermediateEl.textContent && intermediateEl.textContent !== "尚未生成"
+      ? JSON.parse(intermediateEl.textContent)
+      : {};
+    current[stage] = data.result;
+    intermediateEl.textContent = JSON.stringify(current, null, 2);
+  }
+}
+
+function renderResult(data) {
+  const parsed = new DOMParser().parseFromString(data.svg, "image/svg+xml");
+  const root = parsed.documentElement;
+  if (root.localName !== "svg" || parsed.querySelector("parsererror")) {
+    throw new Error("返回内容不是有效 SVG");
+  }
+  canvasEl.replaceChildren(document.importNode(root, true));
+  latestSvg = data.svg;
+  latestReport = data.report || data;
+  latestResult = data;
+  const metrics = data.metrics;
+  metricsEl.innerHTML = "";
+  [
+    ["几何错误", metrics.geometry_error_count],
+    ["动画错误", metrics.animation_error_count],
+    ["最小字号", metrics.minimum_font_size],
+    ["文本数", metrics.final_text_count],
+    ["问题数", metrics.total_issues]
+  ].forEach(([label, value]) => {
+    const item = document.createElement("span");
+    item.className = "metric";
+    item.textContent = `${label}: ${value}`;
+    metricsEl.append(item);
+  });
+  elapsedEl.textContent = `${metrics.elapsed_seconds}s`;
+  issuesEl.textContent = JSON.stringify(data.issues || [], null, 2);
+  fileLinksEl.innerHTML = `
+    <a href="${data.files.svg}" target="_blank">SVG</a>
+    <a href="${data.files.png}" target="_blank">PNG</a>
+    <a href="${data.files.json}" target="_blank">JSON</a>
+  `;
+  downloadSvgBtn.hidden = false;
+  downloadJsonBtn.hidden = false;
+  reviseBtn.disabled = false;
+  statusEl.textContent = metrics.total_issues === 0 ? "生成完成，质量检查通过" : "生成完成，仍有质量问题";
+}
+
+function download(content, type, filename) {
+  const url = URL.createObjectURL(new Blob([content], { type }));
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = filename;
+  anchor.click();
+  URL.revokeObjectURL(url);
+}
+
+downloadSvgBtn.addEventListener("click", () => {
+  download(latestSvg, "image/svg+xml;charset=utf-8", "版本2_动态SVG.svg");
+});
+downloadJsonBtn.addEventListener("click", () => {
+  download(JSON.stringify(latestReport, null, 2), "application/json;charset=utf-8", "版本2_生成报告.json");
+});
+
+reviseBtn.addEventListener("click", async () => {
+  if (!latestResult) {
+    statusEl.textContent = "请先生成一个结果，再进行人工修改";
+    return;
+  }
+  const instruction = revisionInputEl.value.trim();
+  if (instruction.length < 2) {
+    statusEl.textContent = "请先输入具体的修改意见";
+    return;
+  }
+  setBusy(true);
+  statusEl.textContent = "正在根据人工意见修改当前结果";
+  try {
+    const response = await fetch("/api/revise", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        prompt: latestResult.prompt,
+        model_id: latestResult.model_id || modelEl.value,
+        scene_graph: latestResult.scene_graph,
+        motion_plan: latestResult.motion_plan,
+        svg: latestSvg,
+        instruction
+      })
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.detail || "人工修改失败");
+    }
+    renderResult(data);
+    statusEl.textContent = "人工修改完成，已重新质检";
+  } catch (error) {
+    statusEl.textContent = `人工修改失败：${error.message}`;
+  } finally {
+    setBusy(false);
+  }
+});
+
+async function loadModels() {
+  try {
+    const data = await fetch("/api/models").then(response => response.json());
+    modelEl.replaceChildren(...data.models.map(model => {
+      const option = document.createElement("option");
+      option.value = model.id;
+      option.textContent = model.label;
+      option.selected = model.id === data.default;
+      return option;
+    }));
+  } catch (error) {
+    modelEl.innerHTML = '<option value="minimax-m2.5">MiniMax-M2.5</option>';
+    statusEl.textContent = `模型列表加载失败：${error.message}`;
+  }
+}
+
+generateBtn.addEventListener("click", () => {
+  latestResult = null;
+  setBusy(true);
+  stepsEl.replaceChildren();
+  metricsEl.replaceChildren();
+  fileLinksEl.replaceChildren();
+  intermediateEl.textContent = "{}";
+  issuesEl.textContent = "[]";
+  downloadSvgBtn.hidden = true;
+  downloadJsonBtn.hidden = true;
+  reviseBtn.disabled = true;
+  statusEl.textContent = "正在生成";
+  const params = new URLSearchParams({
+    prompt: promptEl.value,
+    model_id: modelEl.value,
+    use_llm_motion: String(useLlmMotionEl.checked),
+    repair_static: String(repairStaticEl.checked)
+  });
+  const source = new EventSource(`/api/generate/stream?${params}`);
+  Object.keys(stageLabels).forEach(stage => {
+    source.addEventListener(`${stage}_start`, event => mark(`${stage}_start`, JSON.parse(event.data)));
+    source.addEventListener(`${stage}_done`, event => mark(`${stage}_done`, JSON.parse(event.data)));
+  });
+  source.addEventListener("result", event => {
+    try {
+      renderResult(JSON.parse(event.data));
+    } catch (error) {
+      statusEl.textContent = error.message;
+    }
+    source.close();
+    setBusy(false);
+  });
+  source.addEventListener("error", event => {
+    let message = "生成失败";
+    try {
+      message = JSON.parse(event.data).detail || message;
+    } catch (_) {}
+    statusEl.textContent = message;
+    source.close();
+    setBusy(false);
+  });
+});
+
+loadModels();
+</script>
+</body>
+</html>

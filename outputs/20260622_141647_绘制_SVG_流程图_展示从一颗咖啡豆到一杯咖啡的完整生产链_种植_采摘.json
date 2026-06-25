@@ -1,0 +1,286 @@
+{
+  "prompt": "绘制 SVG 流程图，展示从一颗咖啡豆到一杯咖啡的完整生产链（种植、采摘、烘焙、研磨、冲煮）",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "咖啡生产流程",
+    "language": "zh",
+    "visual_type": "process",
+    "narrative": "展示从咖啡豆到一杯咖啡的完整生产链，包括种植、采摘、烘焙、研磨、冲煮五个关键环节",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "咖啡生产流程",
+        "summary": "主标题，展示流程图名称",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "subtitle",
+        "role": "subtitle",
+        "label": "从一颗咖啡豆到一杯咖啡",
+        "summary": "副标题，说明流程起点和终点",
+        "order": 1,
+        "importance": "secondary",
+        "connects": [
+          "title"
+        ]
+      },
+      {
+        "id": "step_planting",
+        "role": "process-node",
+        "label": "种植",
+        "summary": "咖啡树在适宜气候下生长，农户精心培育咖啡樱桃",
+        "order": 2,
+        "importance": "primary",
+        "connects": [
+          "subtitle"
+        ]
+      },
+      {
+        "id": "step_picking",
+        "role": "process-node",
+        "label": "采摘",
+        "summary": "人工采摘成熟的红色咖啡樱桃",
+        "order": 3,
+        "importance": "primary",
+        "connects": [
+          "step_planting"
+        ]
+      },
+      {
+        "id": "step_roasting",
+        "role": "process-node",
+        "label": "烘焙",
+        "summary": "生豆经过高温烘焙，释放香气和风味",
+        "order": 4,
+        "importance": "primary",
+        "connects": [
+          "step_picking"
+        ]
+      },
+      {
+        "id": "step_grinding",
+        "role": "process-node",
+        "label": "研磨",
+        "summary": "烘焙后的咖啡豆研磨成粉",
+        "order": 5,
+        "importance": "primary",
+        "connects": [
+          "step_roasting"
+        ]
+      },
+      {
+        "id": "step_brewing",
+        "role": "process-node",
+        "label": "冲煮",
+        "summary": "热水萃取咖啡粉，制成一杯香浓咖啡",
+        "order": 6,
+        "importance": "primary",
+        "connects": [
+          "step_grinding"
+        ]
+      },
+      {
+        "id": "connector_1",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接种植到采摘的箭头",
+        "order": 7,
+        "importance": "supporting",
+        "connects": [
+          "step_planting",
+          "step_picking"
+        ]
+      },
+      {
+        "id": "connector_2",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接采摘到烘焙的箭头",
+        "order": 8,
+        "importance": "supporting",
+        "connects": [
+          "step_picking",
+          "step_roasting"
+        ]
+      },
+      {
+        "id": "connector_3",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接烘焙到研磨的箭头",
+        "order": 9,
+        "importance": "supporting",
+        "connects": [
+          "step_roasting",
+          "step_grinding"
+        ]
+      },
+      {
+        "id": "connector_4",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接研磨到冲煮的箭头",
+        "order": 10,
+        "importance": "supporting",
+        "connects": [
+          "step_grinding",
+          "step_brewing"
+        ]
+      },
+      {
+        "id": "final_cup",
+        "role": "focal",
+        "label": "☕",
+        "summary": "最终呈现的一杯咖啡，象征完整生产链的终点",
+        "order": 11,
+        "importance": "primary",
+        "connects": [
+          "step_brewing"
+        ]
+      }
+    ],
+    "style_hints": [
+      "使用水平流程布局，节点从左到右排列",
+      "每个步骤使用不同颜色区分",
+      "箭头使用动画效果依次显示",
+      "最终咖啡杯使用放大强调效果"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 6.6,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0.0,
+        "duration": 0.5,
+        "reason": "主标题首先出现，建立场景主题"
+      },
+      {
+        "target_id": "subtitle",
+        "effect": "fade-slide",
+        "start": 0.6,
+        "duration": 0.5,
+        "reason": "副标题淡入，说明流程起点和终点"
+      },
+      {
+        "target_id": "step_planting",
+        "effect": "fade-slide",
+        "start": 1.3,
+        "duration": 0.5,
+        "reason": "第一个生产环节种植节点出现"
+      },
+      {
+        "target_id": "connector_1",
+        "effect": "draw-line",
+        "start": 1.9,
+        "duration": 0.3,
+        "reason": "连接箭头动画显示流程方向"
+      },
+      {
+        "target_id": "step_picking",
+        "effect": "fade-slide",
+        "start": 2.3,
+        "duration": 0.5,
+        "reason": "采摘环节节点出现"
+      },
+      {
+        "target_id": "connector_2",
+        "effect": "draw-line",
+        "start": 2.9,
+        "duration": 0.3,
+        "reason": "连接箭头动画显示流程方向"
+      },
+      {
+        "target_id": "step_roasting",
+        "effect": "fade-slide",
+        "start": 3.3,
+        "duration": 0.5,
+        "reason": "烘焙环节节点出现"
+      },
+      {
+        "target_id": "connector_3",
+        "effect": "draw-line",
+        "start": 3.9,
+        "duration": 0.3,
+        "reason": "连接箭头动画显示流程方向"
+      },
+      {
+        "target_id": "step_grinding",
+        "effect": "fade-slide",
+        "start": 4.3,
+        "duration": 0.5,
+        "reason": "研磨环节节点出现"
+      },
+      {
+        "target_id": "connector_4",
+        "effect": "draw-line",
+        "start": 4.9,
+        "duration": 0.3,
+        "reason": "连接箭头动画显示流程方向"
+      },
+      {
+        "target_id": "step_brewing",
+        "effect": "fade-slide",
+        "start": 5.3,
+        "duration": 0.5,
+        "reason": "冲煮环节节点出现"
+      },
+      {
+        "target_id": "final_cup",
+        "effect": "pop",
+        "start": 5.9,
+        "duration": 0.7,
+        "reason": "咖啡杯使用放大弹出效果强调流程终点"
+      }
+    ],
+    "final_frame_rule": "所有五个生产环节节点、连接箭头和最终咖啡杯图标均保持可见，完整展示从种植到冲煮的线性流程"
+  },
+  "metrics": {
+    "elapsed_seconds": 141.46,
+    "geometry_error_count": 2,
+    "animation_error_count": 0,
+    "minimum_font_size": 14.0,
+    "final_text_count": 14,
+    "total_issues": 2
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_141647_绘制_SVG_流程图_展示从一颗咖啡豆到一杯咖啡的完整生产链_种植_采摘.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_141647_绘制_SVG_流程图_展示从一颗咖啡豆到一杯咖啡的完整生产链_种植_采摘.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_141647_绘制_SVG_流程图_展示从一颗咖啡豆到一杯咖啡的完整生产链_种植_采摘.json",
+  "issues": [
+    {
+      "severity": "error",
+      "category": "essential_overlap",
+      "element_id": "",
+      "description": "Final frame contains 1 overlapping essential node pairs: [('step_brewing', 'final_cup')]",
+      "fix_instruction": "Reposition or resize essential nodes so their visual bounding boxes do not overlap. Preserve at least 16px whitespace between neighboring nodes."
+    },
+    {
+      "severity": "error",
+      "category": "essential_overflow",
+      "element_id": "",
+      "description": "最终帧有 1 个重要图形节点超出画布。示例：[('final_cup', 'focal')]",
+      "fix_instruction": "整体缩放或重新定位对应重要节点，确保节点完整位于 1200x800 画布内。"
+    }
+  ],
+  "browser_metrics": {
+    "final_text_count": 14,
+    "final_essential_count": 6,
+    "final_container_count": 6,
+    "final_panel_count": 0,
+    "minimum_font_size": 14,
+    "geometry_error_count": 2,
+    "layout_penalty": 200,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 12,
+    "direct_animation_block_count": 6,
+    "direct_animation_animated_block_count": 6,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 6
+  }
+}

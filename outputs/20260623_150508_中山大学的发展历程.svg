@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <style id="v2-motion-style">
+@keyframes v2FadeSlide { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes v2Pop { 0% { opacity: 0; transform: scale(.92); } 70% { opacity: 1; transform: scale(1.03); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes v2Fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes v2Draw { from { opacity: 1; stroke-dashoffset: 900; } to { opacity: 1; stroke-dashoffset: 0; } }
+@keyframes v2Highlight { 0% { opacity: 0; } 40% { opacity: 1; filter: brightness(1.18); } 100% { opacity: 1; filter: brightness(1); } }
+#main_title { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 1.20s ease forwards; animation-delay: 0.00s; }
+#subtitle { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Fade 0.80s ease forwards; animation-delay: 0.60s; }
+#node_1924 { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.80s ease forwards; animation-delay: 2.00s; }
+#node_1952 { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.80s ease forwards; animation-delay: 3.20s; }
+#arrow_1 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.80s ease forwards; animation-delay: 4.20s; }
+#node_2000 { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.80s ease forwards; animation-delay: 5.20s; }
+#arrow_2 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.80s ease forwards; animation-delay: 6.20s; }
+#node_2017 { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.80s ease forwards; animation-delay: 7.20s; }
+#arrow_3 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.80s ease forwards; animation-delay: 8.20s; }
+#node_2024 { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.80s ease forwards; animation-delay: 9.20s; }
+#arrow_4 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.80s ease forwards; animation-delay: 10.20s; }
+#goal_focus { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Highlight 1.20s ease forwards; animation-delay: 11.20s; }
+#arrow_goal { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.80s ease forwards; animation-delay: 12.60s; }
+</style><defs>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#C41E3A" flood-opacity="0.3" />
+    </filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <linearGradient id="gradRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E53935" />
+      <stop offset="100%" stop-color="#B71C1C" />
+    </linearGradient>
+    <linearGradient id="gradGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF59D" />
+      <stop offset="100%" stop-color="#FFC107" />
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFC107" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#FFC107" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="timelineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C41E3A" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#C41E3A" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#C41E3A" stop-opacity="1" />
+    </linearGradient>
+    
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 L 2 5 Z" fill="#C41E3A" />
+    </marker>
+  </defs>
+
+  
+  <rect width="1200" height="800" fill="#FDFBF7" />
+  <rect y="0" width="1200" height="8" fill="#C41E3A" />
+  <rect y="792" width="1200" height="8" fill="#C41E3A" />
+
+  
+  <g opacity="0.04">
+    <text x="600" y="420" font-size="80" fill="#C41E3A" text-anchor="middle" font-family="STZhongsong, SimSun, serif" font-weight="bold" transform="rotate(-10, 600, 420)">博学 审问 慎思 明辨 笃行</text>
+    <path d="M 300 180 Q 500 150, 700 180 T 900 180" fill="none" stroke="#C41E3A" stroke-width="12" stroke-linecap="round" />
+    <circle cx="650" cy="300" r="200" fill="none" stroke="#C41E3A" stroke-width="4" />
+  </g>
+
+  
+  <g id="main_title" data-role="title" data-order="0">
+    <rect x="250" y="55" width="700" height="100" rx="45" fill="#C41E3A" opacity="0.06" />
+    <text x="600" y="110" font-size="48" fill="#C41E3A" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">中山大学的发展历程</text>
+  </g>
+
+  <g id="subtitle" data-role="subtitle" data-order="1">
+    <text x="600" y="180" font-size="24" fill="#666666" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-style="italic">世纪传承，追求卓越</text>
+    <line x1="300" y1="200" x2="900" y2="200" stroke="#C41E3A" stroke-width="2" opacity="0.5" />
+  </g>
+
+  
+  <path d="M 100 500 L 860 500" stroke="url(#timelineGrad)" stroke-width="6" fill="none" />
+  <path d="M 100 510 L 860 510" stroke="#C41E3A" stroke-width="2" stroke-dasharray="10, 10" fill="none" opacity="0.4" />
+
+  
+  <g id="node_1924" data-role="process-node" data-order="2">
+    <circle cx="140" cy="500" r="55" fill="none" stroke="#FFC107" stroke-width="3" opacity="0.4" />
+    <circle cx="140" cy="500" r="45" fill="url(#gradRed)" stroke="#FFFFFF" stroke-width="4" filter="url(#dropShadow)" />
+    <text x="140" y="510" font-size="22" fill="#FFFFFF" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">1924</text>
+    <text x="140" y="590" font-size="16" fill="#C41E3A" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">创校：孙中山先生创办</text>
+    <text x="140" y="620" font-size="16" fill="#333333" text-anchor="middle" font-family="SimSun, serif">国立广东大学</text>
+  </g>
+
+  
+  <g id="node_1952" data-role="process-node" data-order="3">
+    <circle cx="320" cy="500" r="55" fill="none" stroke="#FFC107" stroke-width="3" opacity="0.4" />
+    <circle cx="320" cy="500" r="45" fill="url(#gradRed)" stroke="#FFFFFF" stroke-width="4" filter="url(#dropShadow)" />
+    <text x="320" y="510" font-size="22" fill="#FFFFFF" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">1952</text>
+    <text x="320" y="590" font-size="16" fill="#C41E3A" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">院系调整：成为</text>
+    <text x="320" y="620" font-size="16" fill="#333333" text-anchor="middle" font-family="SimSun, serif">文理科综合大学</text>
+  </g>
+
+  
+  <g id="node_2000" data-role="process-node" data-order="4">
+    <circle cx="500" cy="500" r="55" fill="none" stroke="#FFC107" stroke-width="3" opacity="0.4" />
+    <circle cx="500" cy="500" r="45" fill="url(#gradRed)" stroke="#FFFFFF" stroke-width="4" filter="url(#dropShadow)" />
+    <text x="500" y="510" font-size="22" fill="#FFFFFF" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">2000</text>
+    <text x="500" y="590" font-size="16" fill="#C41E3A" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">合并组建新中山大学</text>
+    <text x="500" y="620" font-size="16" fill="#333333" text-anchor="middle" font-family="SimSun, serif">学科布局完善</text>
+  </g>
+
+  
+  <g id="node_2017" data-role="process-node" data-order="5">
+    <circle cx="680" cy="500" r="55" fill="none" stroke="#FFC107" stroke-width="3" opacity="0.4" />
+    <circle cx="680" cy="500" r="45" fill="url(#gradRed)" stroke="#FFFFFF" stroke-width="4" filter="url(#dropShadow)" />
+    <text x="680" y="510" font-size="22" fill="#FFFFFF" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">2017</text>
+    <text x="680" y="590" font-size="16" fill="#C41E3A" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">入选国家“双一流”</text>
+    <text x="680" y="620" font-size="16" fill="#333333" text-anchor="middle" font-family="SimSun, serif">建设高校</text>
+  </g>
+
+  
+  <g id="node_2024" data-role="process-node" data-order="6">
+    <circle cx="860" cy="500" r="55" fill="none" stroke="#FFC107" stroke-width="3" opacity="0.4" />
+    <circle cx="860" cy="500" r="45" fill="url(#gradRed)" stroke="#FFFFFF" stroke-width="4" filter="url(#dropShadow)" />
+    <text x="860" y="510" font-size="22" fill="#FFFFFF" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">2024</text>
+    <text x="860" y="590" font-size="16" fill="#C41E3A" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">开启下一个百年</text>
+    <text x="860" y="620" font-size="16" fill="#333333" text-anchor="middle" font-family="SimSun, serif">新征程</text>
+  </g>
+
+  
+  <g id="arrow_1" data-role="connector" data-order="8" data-connects="node_1924,node_1952">
+    <line x1="185" y1="500" x2="265" y2="500" stroke="#C41E3A" stroke-width="3" marker-end="url(#arrow)" />
+  </g>
+  <g id="arrow_2" data-role="connector" data-order="9" data-connects="node_1952,node_2000">
+    <line x1="365" y1="500" x2="445" y2="500" stroke="#C41E3A" stroke-width="3" marker-end="url(#arrow)" />
+  </g>
+  <g id="arrow_3" data-role="connector" data-order="10" data-connects="node_2000,node_2017">
+    <line x1="545" y1="500" x2="625" y2="500" stroke="#C41E3A" stroke-width="3" marker-end="url(#arrow)" />
+  </g>
+  <g id="arrow_4" data-role="connector" data-order="11" data-connects="node_2017,node_2024">
+    <line x1="725" y1="500" x2="805" y2="500" stroke="#C41E3A" stroke-width="3" marker-end="url(#arrow)" />
+  </g>
+
+  
+  <g id="goal_focus" data-role="focal" data-order="7" data-connects="node_2024">
+    
+    <circle cx="1000" cy="260" r="180" fill="url(#glowGrad)" />
+    <g stroke="#FFC107" stroke-width="4" opacity="0.6" stroke-linecap="round">
+      <line x1="1000" y1="80" x2="1000" y2="140" />
+      <line x1="1000" y1="380" x2="1000" y2="440" />
+      <line x1="820" y1="260" x2="760" y2="260" />
+      <line x1="1180" y1="260" x2="1160" y2="260" />
+      <line x1="870" y1="130" x2="840" y2="100" />
+      <line x1="1130" y1="390" x2="1160" y2="420" />
+      <line x1="1130" y1="130" x2="1160" y2="100" />
+      <line x1="870" y1="390" x2="840" y2="420" />
+    </g>
+    
+    
+    <rect x="880" y="180" width="240" height="160" rx="80" fill="url(#gradGold)" stroke="#C41E3A" stroke-width="4" filter="url(#dropShadow)" />
+    <circle cx="1000" cy="260" r="140" fill="none" stroke="#FFC107" stroke-width="4" stroke-dasharray="10, 10" opacity="0.6" />
+    
+    
+    <text x="1000" y="250" font-size="24" fill="#C41E3A" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">迈向世界</text>
+    <text x="1000" y="285" font-size="24" fill="#C41E3A" text-anchor="middle" font-family="SimHei, 'Microsoft YaHei', sans-serif" font-weight="bold">一流大学</text>
+  </g>
+
+  
+  <g id="arrow_goal" data-role="connector" data-order="12" data-connects="node_2024,goal_focus">
+    <path d="M 905 500 Q 950 500, 880 320" fill="none" stroke="#C41E3A" stroke-width="4" stroke-dasharray="6,4" marker-end="url(#arrow)" />
+  </g>
+</svg>

@@ -1,0 +1,367 @@
+{
+  "prompt": "大语言模型的基本原理",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "大语言模型的基本原理",
+    "language": "zh",
+    "visual_type": "process",
+    "narrative": "展示大语言模型从输入到输出的完整处理流程，揭示其核心技术原理",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "大语言模型的基本原理",
+        "summary": "主标题，概括整个 infographic 的主题",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "subtitle",
+        "role": "subtitle",
+        "label": "从输入到输出的智能生成过程",
+        "summary": "副标题，说明内容的核心逻辑",
+        "order": 1,
+        "importance": "secondary",
+        "connects": []
+      },
+      {
+        "id": "input_box",
+        "role": "process-node",
+        "label": "用户输入",
+        "summary": "用户提供的文本提示 prompt",
+        "order": 2,
+        "importance": "primary",
+        "connects": [
+          "tokenization"
+        ]
+      },
+      {
+        "id": "tokenization",
+        "role": "process-node",
+        "label": "分词 Tokenization",
+        "summary": "将文本分割成词元 tokens",
+        "order": 3,
+        "importance": "primary",
+        "connects": [
+          "input_box",
+          "embedding"
+        ]
+      },
+      {
+        "id": "connector_1",
+        "role": "connector",
+        "label": "",
+        "summary": "连接输入到分词的箭头",
+        "order": 4,
+        "importance": "supporting",
+        "connects": [
+          "input_box",
+          "tokenization"
+        ]
+      },
+      {
+        "id": "embedding",
+        "role": "process-node",
+        "label": "词嵌入 Embedding",
+        "summary": "将词元转换为向量表示",
+        "order": 5,
+        "importance": "primary",
+        "connects": [
+          "tokenization",
+          "transformer"
+        ]
+      },
+      {
+        "id": "connector_2",
+        "role": "connector",
+        "label": "",
+        "summary": "连接分词到嵌入的箭头",
+        "order": 6,
+        "importance": "supporting",
+        "connects": [
+          "tokenization",
+          "embedding"
+        ]
+      },
+      {
+        "id": "transformer",
+        "role": "focal",
+        "label": "Transformer 架构",
+        "summary": "核心神经网络结构，处理序列关系",
+        "order": 7,
+        "importance": "primary",
+        "connects": [
+          "embedding",
+          "attention"
+        ]
+      },
+      {
+        "id": "connector_3",
+        "role": "connector",
+        "label": "",
+        "summary": "连接嵌入到 Transformer 的箭头",
+        "order": 8,
+        "importance": "supporting",
+        "connects": [
+          "embedding",
+          "transformer"
+        ]
+      },
+      {
+        "id": "attention",
+        "role": "process-node",
+        "label": "自注意力机制",
+        "summary": "Self-Attention，捕捉词与词之间的关联",
+        "order": 9,
+        "importance": "primary",
+        "connects": [
+          "transformer",
+          "output"
+        ]
+      },
+      {
+        "id": "connector_4",
+        "role": "connector",
+        "label": "",
+        "summary": "连接 Transformer 到注意力的箭头",
+        "order": 10,
+        "importance": "supporting",
+        "connects": [
+          "transformer",
+          "attention"
+        ]
+      },
+      {
+        "id": "output",
+        "role": "process-node",
+        "label": "输出生成",
+        "summary": "基于概率生成下一个词元",
+        "order": 11,
+        "importance": "primary",
+        "connects": [
+          "attention"
+        ]
+      },
+      {
+        "id": "connector_5",
+        "role": "connector",
+        "label": "",
+        "summary": "连接到输出的箭头",
+        "order": 12,
+        "importance": "supporting",
+        "connects": [
+          "attention",
+          "output"
+        ]
+      },
+      {
+        "id": "annotation_pretrain",
+        "role": "annotation",
+        "label": "预训练 Pre-training",
+        "summary": "在大规模数据上学习语言模式",
+        "order": 13,
+        "importance": "secondary",
+        "connects": [
+          "transformer"
+        ]
+      },
+      {
+        "id": "annotation_finetune",
+        "role": "annotation",
+        "label": "微调 Fine-tuning",
+        "summary": "针对特定任务优化模型",
+        "order": 14,
+        "importance": "secondary",
+        "connects": [
+          "transformer"
+        ]
+      },
+      {
+        "id": "bg_pattern",
+        "role": "background",
+        "label": "",
+        "summary": "背景网格纹理，增添科技感",
+        "order": 15,
+        "importance": "supporting",
+        "connects": []
+      }
+    ],
+    "style_hints": [
+      "使用蓝色到紫色的渐变色调",
+      "采用简洁的卡片式布局",
+      "关键概念使用高亮边框",
+      "流程使用流畅的动画连接线",
+      "保持现代科技风格"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 12.0,
+    "steps": [
+      {
+        "target_id": "bg_pattern",
+        "effect": "fade",
+        "start": 0.0,
+        "duration": 1.0,
+        "reason": "背景网格纹理先出现，营造科技氛围"
+      },
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0.5,
+        "duration": 1.0,
+        "reason": "主标题首先出现，吸引观众注意力"
+      },
+      {
+        "target_id": "subtitle",
+        "effect": "fade-slide",
+        "start": 1.2,
+        "duration": 0.8,
+        "reason": "副标题随后出现，说明内容核心逻辑"
+      },
+      {
+        "target_id": "input_box",
+        "effect": "pop",
+        "start": 2.0,
+        "duration": 0.8,
+        "reason": "用户输入作为流程起点先出现"
+      },
+      {
+        "target_id": "connector_1",
+        "effect": "draw-line",
+        "start": 2.8,
+        "duration": 0.5,
+        "reason": "连接线引导视觉流向分词步骤"
+      },
+      {
+        "target_id": "tokenization",
+        "effect": "fade-slide",
+        "start": 3.2,
+        "duration": 0.8,
+        "reason": "分词是第一个关键处理步骤"
+      },
+      {
+        "target_id": "connector_2",
+        "effect": "draw-line",
+        "start": 4.0,
+        "duration": 0.5,
+        "reason": "连接线引导到词嵌入步骤"
+      },
+      {
+        "target_id": "embedding",
+        "effect": "fade-slide",
+        "start": 4.4,
+        "duration": 0.8,
+        "reason": "词嵌入将词元转换为向量表示"
+      },
+      {
+        "target_id": "connector_3",
+        "effect": "draw-line",
+        "start": 5.2,
+        "duration": 0.5,
+        "reason": "连接线引导到核心Transformer架构"
+      },
+      {
+        "target_id": "transformer",
+        "effect": "pop",
+        "start": 5.6,
+        "duration": 1.2,
+        "reason": "Transformer是核心架构，需要突出展示"
+      },
+      {
+        "target_id": "annotation_pretrain",
+        "effect": "fade",
+        "start": 6.5,
+        "duration": 0.6,
+        "reason": "预训练注释补充说明模型学习方式"
+      },
+      {
+        "target_id": "annotation_finetune",
+        "effect": "fade",
+        "start": 6.8,
+        "duration": 0.6,
+        "reason": "微调注释补充说明模型优化方式"
+      },
+      {
+        "target_id": "connector_4",
+        "effect": "draw-line",
+        "start": 7.5,
+        "duration": 0.5,
+        "reason": "连接线引导到自注意力机制"
+      },
+      {
+        "target_id": "attention",
+        "effect": "fade-slide",
+        "start": 7.9,
+        "duration": 1.0,
+        "reason": "自注意力机制是Transformer的核心组件"
+      },
+      {
+        "target_id": "connector_5",
+        "effect": "draw-line",
+        "start": 8.9,
+        "duration": 0.5,
+        "reason": "连接线引导到最终输出"
+      },
+      {
+        "target_id": "output",
+        "effect": "pop",
+        "start": 9.3,
+        "duration": 1.0,
+        "reason": "输出生成是流程的最终结果"
+      },
+      {
+        "target_id": "transformer",
+        "effect": "highlight",
+        "start": 10.5,
+        "duration": 1.5,
+        "reason": "最终高亮Transformer强调其核心地位"
+      }
+    ],
+    "final_frame_rule": "所有语义内容保持可见和可读，完整展示从输入到输出的LLM处理流程"
+  },
+  "metrics": {
+    "elapsed_seconds": 102.36,
+    "geometry_error_count": 1,
+    "animation_error_count": 1,
+    "minimum_font_size": 12.0,
+    "final_text_count": 19,
+    "total_issues": 2
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_134534_大语言模型的基本原理.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_134534_大语言模型的基本原理.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_134534_大语言模型的基本原理.json",
+  "issues": [
+    {
+      "severity": "error",
+      "category": "font_too_small",
+      "element_id": "",
+      "description": "最终帧有 2 段文字小于 14px。示例：[('Pre-training', 12), ('Fine-tuning', 12)]",
+      "fix_instruction": "保留构图和视觉隐喻，将所有可见文字提高到至少 14px；正文至少 16px，空间不足时删减次要文案或扩大容器。"
+    },
+    {
+      "severity": "error",
+      "category": "animation_sequence_flat",
+      "element_id": "",
+      "description": "Semantic text blocks do not reveal with clearly increasing delays in document reading order.",
+      "fix_instruction": "Use increasing animation-delay values so the title appears first and each major node/text block appears one by one along the logical flow."
+    }
+  ],
+  "browser_metrics": {
+    "final_text_count": 19,
+    "final_essential_count": 6,
+    "final_container_count": 6,
+    "final_panel_count": 0,
+    "minimum_font_size": 12,
+    "geometry_error_count": 1,
+    "layout_penalty": 40,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 16,
+    "direct_animation_block_count": 6,
+    "direct_animation_animated_block_count": 6,
+    "direct_animation_has_sequence": false,
+    "direct_animation_unique_delays": 6
+  }
+}

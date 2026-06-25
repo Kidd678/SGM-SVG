@@ -1,0 +1,289 @@
+{
+  "prompt": "中山大学的发展历程",
+  "model_id": "deepseek-v4-pro",
+  "scene_graph": {
+    "title": "中山大学的发展历程",
+    "language": "zh",
+    "visual_type": "timeline",
+    "narrative": "通过时间轴梳理中山大学从建校至今的重要发展节点，展现其成长为一流大学的历程。",
+    "elements": [
+      {
+        "id": "main_title",
+        "role": "title",
+        "label": "中山大学的发展历程",
+        "summary": "主标题，点明主题",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "subtitle",
+        "role": "subtitle",
+        "label": "世纪传承，追求卓越",
+        "summary": "副标题，提炼大学精神",
+        "order": 1,
+        "importance": "secondary",
+        "connects": []
+      },
+      {
+        "id": "node_1924",
+        "role": "process-node",
+        "label": "1924年",
+        "summary": "创校：孙中山先生创办国立广东大学",
+        "order": 2,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "node_1952",
+        "role": "process-node",
+        "label": "1952年",
+        "summary": "院系调整：成为文理科综合大学",
+        "order": 3,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "node_2000",
+        "role": "process-node",
+        "label": "2000年",
+        "summary": "合并组建新中山大学，学科布局完善",
+        "order": 4,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "node_2017",
+        "role": "process-node",
+        "label": "2017年",
+        "summary": "入选国家“双一流”建设高校",
+        "order": 5,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "node_2024",
+        "role": "process-node",
+        "label": "2024年",
+        "summary": "开启下一个百年新征程",
+        "order": 6,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "goal_focus",
+        "role": "focal",
+        "label": "迈向世界一流大学",
+        "summary": "发展目标：最终愿景，用视觉强调",
+        "order": 7,
+        "importance": "primary",
+        "connects": [
+          "node_2024"
+        ]
+      },
+      {
+        "id": "arrow_1",
+        "role": "connector",
+        "label": "→",
+        "summary": "时间推进箭头，连接1924至1952",
+        "order": 8,
+        "importance": "supporting",
+        "connects": [
+          "node_1924",
+          "node_1952"
+        ]
+      },
+      {
+        "id": "arrow_2",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接1952至2000年",
+        "order": 9,
+        "importance": "supporting",
+        "connects": [
+          "node_1952",
+          "node_2000"
+        ]
+      },
+      {
+        "id": "arrow_3",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接2000至2017年",
+        "order": 10,
+        "importance": "supporting",
+        "connects": [
+          "node_2000",
+          "node_2017"
+        ]
+      },
+      {
+        "id": "arrow_4",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接2017至2024年",
+        "order": 11,
+        "importance": "supporting",
+        "connects": [
+          "node_2017",
+          "node_2024"
+        ]
+      },
+      {
+        "id": "arrow_goal",
+        "role": "connector",
+        "label": "⇒",
+        "summary": "指向最终目标，强调发展路径",
+        "order": 12,
+        "importance": "supporting",
+        "connects": [
+          "node_2024",
+          "goal_focus"
+        ]
+      }
+    ],
+    "style_hints": [
+      "中大标志性红色（#C41E3A）与金色渐变",
+      "时间轴采用水平/蜿蜒设计，节点用圆形徽章",
+      "使用毛笔笔触装饰元素，体现百年学府底蕴",
+      "关键节点放大，配以年份发光效果",
+      "背景淡雅米色，融入校训暗纹",
+      "最终目标处使用放射状光线突出"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 14.0,
+    "steps": [
+      {
+        "target_id": "main_title",
+        "effect": "fade-slide",
+        "start": 0.0,
+        "duration": 1.2,
+        "reason": "标题最先出现，点明主题，吸引注意。"
+      },
+      {
+        "target_id": "subtitle",
+        "effect": "fade",
+        "start": 0.6,
+        "duration": 0.8,
+        "reason": "副标题随后淡入，补充大学精神，与主标题呼应。"
+      },
+      {
+        "target_id": "node_1924",
+        "effect": "pop",
+        "start": 2.0,
+        "duration": 0.8,
+        "reason": "第一个历史节点，用弹出效果强调创校之始。"
+      },
+      {
+        "target_id": "node_1952",
+        "effect": "pop",
+        "start": 3.2,
+        "duration": 0.8,
+        "reason": "第二个节点，按时间依次出现，保持叙事节奏。"
+      },
+      {
+        "target_id": "arrow_1",
+        "effect": "draw-line",
+        "start": 4.2,
+        "duration": 0.8,
+        "reason": "连接1924与1952的箭头在两者均可见后画出，表现时间递进。"
+      },
+      {
+        "target_id": "node_2000",
+        "effect": "pop",
+        "start": 5.2,
+        "duration": 0.8,
+        "reason": "第三个节点继前两个之后出现，延续时间线。"
+      },
+      {
+        "target_id": "arrow_2",
+        "effect": "draw-line",
+        "start": 6.2,
+        "duration": 0.8,
+        "reason": "连接1952与2000，箭头跟随刚刚出现的节点。"
+      },
+      {
+        "target_id": "node_2017",
+        "effect": "pop",
+        "start": 7.2,
+        "duration": 0.8,
+        "reason": "第四个节点，展现学校入选双一流的重要阶段。"
+      },
+      {
+        "target_id": "arrow_3",
+        "effect": "draw-line",
+        "start": 8.2,
+        "duration": 0.8,
+        "reason": "连接2000与2017，完成该段路径显示。"
+      },
+      {
+        "target_id": "node_2024",
+        "effect": "pop",
+        "start": 9.2,
+        "duration": 0.8,
+        "reason": "第五个节点，代表最新征程，接着出现。"
+      },
+      {
+        "target_id": "arrow_4",
+        "effect": "draw-line",
+        "start": 10.2,
+        "duration": 0.8,
+        "reason": "连接2017与2024，完善时间轴最后一段。"
+      },
+      {
+        "target_id": "goal_focus",
+        "effect": "highlight",
+        "start": 11.2,
+        "duration": 1.2,
+        "reason": "最终目标节点以高光放大出现，视觉强调发展愿景。"
+      },
+      {
+        "target_id": "arrow_goal",
+        "effect": "draw-line",
+        "start": 12.6,
+        "duration": 0.8,
+        "reason": "指向目标的特殊箭头在2024和目标都可见后画出，凸显发展路径。"
+      }
+    ],
+    "final_frame_rule": "所有语义内容保持可见且可读，时间轴完整展示从建校到目标的历程。"
+  },
+  "metrics": {
+    "elapsed_seconds": 71.38,
+    "geometry_error_count": 1,
+    "animation_error_count": 0,
+    "minimum_font_size": 18.0,
+    "final_text_count": 20,
+    "total_issues": 1
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260623_150843_中山大学的发展历程_人工修改.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260623_150843_中山大学的发展历程_人工修改.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260623_150843_中山大学的发展历程_人工修改.json",
+  "issues": [
+    {
+      "severity": "error",
+      "category": "text_overlap",
+      "element_id": "",
+      "description": "最终帧检测到 6 组明显文字重叠。",
+      "fix_instruction": "重新分配标签坐标或缩短文本，确保最终帧所有文本边界框互不重叠。"
+    }
+  ],
+  "browser_metrics": {
+    "final_text_count": 20,
+    "final_essential_count": 6,
+    "final_container_count": 6,
+    "final_panel_count": 0,
+    "minimum_font_size": 18,
+    "geometry_error_count": 1,
+    "layout_penalty": 300,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 13,
+    "direct_animation_block_count": 6,
+    "direct_animation_animated_block_count": 6,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 6
+  },
+  "human_revision": "时间点下的字体适当增大一点，最后一个“迈向世界一流大学”可以适当小一点"
+}

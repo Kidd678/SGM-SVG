@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <style id="v2-motion-style">
+@keyframes v2FadeSlide { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes v2Pop { 0% { opacity: 0; transform: scale(.92); } 70% { opacity: 1; transform: scale(1.03); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes v2Fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes v2Draw { from { opacity: 1; stroke-dashoffset: 900; } to { opacity: 1; stroke-dashoffset: 0; } }
+@keyframes v2Highlight { 0% { opacity: 0; } 40% { opacity: 1; filter: brightness(1.18); } 100% { opacity: 1; filter: brightness(1); } }
+#title { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.55s ease forwards; animation-delay: 0.00s; }
+#subtitle { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.45s ease forwards; animation-delay: 0.55s; }
+#step_bean { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.55s ease forwards; animation-delay: 1.10s; }
+#step_processing { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.55s ease forwards; animation-delay: 1.65s; }
+#step_roasting { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.55s ease forwards; animation-delay: 2.20s; }
+#step_grinding { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.55s ease forwards; animation-delay: 2.75s; }
+#step_brewing { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.55s ease forwards; animation-delay: 3.30s; }
+#step_cup { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.55s ease forwards; animation-delay: 3.85s; }
+#arrow_1 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.55s ease forwards; animation-delay: 4.55s; }
+#arrow_2 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.55s ease forwards; animation-delay: 5.10s; }
+#arrow_3 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.55s ease forwards; animation-delay: 5.65s; }
+#arrow_4 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.55s ease forwards; animation-delay: 6.20s; }
+#arrow_5 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.55s ease forwards; animation-delay: 6.75s; }
+#note_quality { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.45s ease forwards; animation-delay: 7.15s; }
+</style><defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8F0" />
+      <stop offset="100%" style="stop-color:#F5E6D3" />
+    </linearGradient>
+    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5A2B" />
+      <stop offset="100%" style="stop-color:#6F4E37" />
+    </linearGradient>
+    <linearGradient id="cupGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D2691E" />
+      <stop offset="100%" style="stop-color:#8B4513" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-color="#5D4037" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  
+  
+  <rect width="1200" height="800" fill="url(#bgGradient)" />
+  
+  
+  <g opacity="0.08">
+    <ellipse cx="100" cy="700" rx="15" ry="10" fill="#6F4E37" transform="rotate(-30 100 700)" />
+    <ellipse cx="150" cy="720" rx="15" ry="10" fill="#6F4E37" transform="rotate(20 150 720)" />
+    <ellipse cx="1100" cy="100" rx="15" ry="10" fill="#6F4E37" transform="rotate(45 1100 100)" />
+    <ellipse cx="1050" cy="80" rx="15" ry="10" fill="#6F4E37" transform="rotate(-15 1050 80)" />
+  </g>
+  
+  
+  <g id="title" data-role="title" data-order="0">
+    <text x="600" y="60" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="bold" fill="#4E342E">咖啡生产链</text>
+  </g>
+  
+  
+  <g id="subtitle" data-role="subtitle" data-order="1">
+    <text x="600" y="100" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#6D4C41">从种植到杯中的完整流程</text>
+  </g>
+  
+  
+  <g id="step_bean" data-role="process-node" data-order="2" filter="url(#shadow)">
+    <rect x="70" y="280" width="140" height="160" rx="20" fill="url(#nodeGradient)" />
+    <circle cx="140" cy="340" r="35" fill="#A1887F" />
+    
+    <path d="M140 315 L140 365 M125 340 L155 340" stroke="#5D4037" stroke-width="3" stroke-linecap="round" />
+    <ellipse cx="140" cy="320" rx="20" ry="15" fill="#81C784" />
+    <circle cx="130" cy="335" r="6" fill="#C62828" />
+    <circle cx="150" cy="340" r="5" fill="#C62828" />
+    <text x="140" y="395" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#FFF">种植采摘</text>
+  </g>
+  
+  
+  <g id="arrow_1" data-role="connector" data-order="8">
+    <path d="M215 360 L265 360" stroke="#8B5A2B" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowhead)" />
+    <polygon points="265,360 255,355 255,365" fill="#8B5A2B" />
+  </g>
+  
+  
+  <g id="step_processing" data-role="process-node" data-order="3" filter="url(#shadow)">
+    <rect x="270" y="280" width="140" height="160" rx="20" fill="url(#nodeGradient)" />
+    <circle cx="340" cy="340" r="35" fill="#A1887F" />
+    
+    <path d="M340 315 Q330 340 340 355 Q350 340 340 315" fill="#42A5F5" />
+    <ellipse cx="340" cy="355" rx="12" ry="4" fill="#42A5F5" opacity="0.5" />
+    <text x="340" y="395" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#FFF">处理加工</text>
+  </g>
+  
+  
+  <g id="arrow_2" data-role="connector" data-order="9">
+    <path d="M415 360 L465 360" stroke="#8B5A2B" stroke-width="4" stroke-linecap="round" />
+    <polygon points="465,360 455,355 455,365" fill="#8B5A2B" />
+  </g>
+  
+  
+  <g id="step_roasting" data-role="process-node" data-order="4" filter="url(#shadow)">
+    <rect x="470" y="280" width="140" height="160" rx="20" fill="url(#nodeGradient)" />
+    <circle cx="540" cy="340" r="35" fill="#A1887F" />
+    
+    <path d="M540 365 L540 355 M530 350 Q540 330 550 350 M535 360 Q540 340 545 360" stroke="#FF5722" stroke-width="3" stroke-linecap="round" fill="none" />
+    <ellipse cx="540" cy="345" rx="8" ry="12" fill="#FF9800" />
+    <text x="540" y="395" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#FFF">烘焙</text>
+  </g>
+  
+  
+  <g id="arrow_3" data-role="connector" data-order="10">
+    <path d="M615 360 L665 360" stroke="#8B5A2B" stroke-width="4" stroke-linecap="round" />
+    <polygon points="665,360 655,355 655,365" fill="#8B5A2B" />
+  </g>
+  
+  
+  <g id="step_grinding" data-role="process-node" data-order="5" filter="url(#shadow)">
+    <rect x="670" y="280" width="140" height="160" rx="20" fill="url(#nodeGradient)" />
+    <circle cx="740" cy="340" r="35" fill="#A1887F" />
+    
+    <circle cx="740" cy="340" r="20" fill="none" stroke="#5D4037" stroke-width="3" />
+    <circle cx="740" cy="340" r="8" fill="#5D4037" />
+    <line x1="740" y1="320" x2="740" y2="328" stroke="#5D4037" stroke-width="2" />
+    <line x1="740" y1="352" x2="740" y2="360" stroke="#5D4037" stroke-width="2" />
+    <line x1="720" y1="340" x2="728" y2="340" stroke="#5D4037" stroke-width="2" />
+    <line x1="752" y1="340" x2="760" y2="340" stroke="#5D4037" stroke-width="2" />
+    <text x="740" y="395" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#FFF">研磨</text>
+  </g>
+  
+  
+  <g id="arrow_4" data-role="connector" data-order="11">
+    <path d="M815 360 L865 360" stroke="#8B5A2B" stroke-width="4" stroke-linecap="round" />
+    <polygon points="865,360 855,355 855,365" fill="#8B5A2B" />
+  </g>
+  
+  
+  <g id="step_brewing" data-role="process-node" data-order="6" filter="url(#shadow)">
+    <rect x="870" y="280" width="140" height="160" rx="20" fill="url(#nodeGradient)" />
+    <circle cx="940" cy="340" r="35" fill="#A1887F" />
+    
+    <path d="M925 325 L925 355 L955 355 L955 325" fill="none" stroke="#5D4037" stroke-width="2" />
+    <line x1="930" y1="320" x2="950" y2="320" stroke="#5D4037" stroke-width="2" />
+    <ellipse cx="940" cy="330" rx="10" ry="3" fill="#6D4C41" opacity="0.6" />
+    <text x="940" y="395" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#FFF">冲泡</text>
+  </g>
+  
+  
+  <g id="arrow_5" data-role="connector" data-order="12">
+    <path d="M1015 360 L1065 360" stroke="#8B5A2B" stroke-width="4" stroke-linecap="round" />
+    <polygon points="1065,360 1055,355 1055,365" fill="#8B5A2B" />
+  </g>
+  
+  
+  <g id="step_cup" data-role="focal" data-order="7" filter="url(#shadow)">
+    <ellipse cx="1120" cy="420" rx="60" ry="15" fill="#A1887F" opacity="0.5" />
+    
+    <path d="M1070 340 L1070 400 Q1070 420 1120 420 Q1170 420 1170 400 L1170 340 Z" fill="url(#cupGradient)" />
+    
+    <path d="M1170 355 Q1190 355 1190 375 Q1190 395 1170 395" fill="none" stroke="#8B4513" stroke-width="8" stroke-linecap="round" />
+    
+    <ellipse cx="1120" cy="345" rx="45" ry="8" fill="#3E2723" />
+    
+    <path d="M1105 320 Q1100 310 1105 300 Q1110 290 1105 280" stroke="#BDBDBD" stroke-width="2" fill="none" opacity="0.6" />
+    <path d="M1135 315 Q1130 305 1135 295 Q1140 285 1135 275" stroke="#BDBDBD" stroke-width="2" fill="none" opacity="0.6" />
+    
+    <ellipse cx="1120" cy="425" rx="70" ry="10" fill="#D7CCC8" />
+    <ellipse cx="1120" cy="423" rx="55" ry="6" fill="#BCAAA4" />
+    <text x="1120" y="460" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#4E342E">一杯咖啡</text>
+  </g>
+  
+  
+  <g id="note_quality" data-role="annotation" data-order="13">
+    <rect x="480" y="200" width="120" height="55" rx="10" fill="#FFECB3" stroke="#FFA000" stroke-width="2" />
+    <text x="540" y="225" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#5D4037">品质关键</text>
+    <text x="540" y="246" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#6D4C41">影响最终风味</text>
+  </g>
+  
+  
+  <line x1="540" y1="255" x2="540" y2="280" stroke="#FFA000" stroke-width="1" stroke-dasharray="4,2" />
+  
+  
+  <g>
+    <text x="600" y="520" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#8D6E63" font-style="italic">Each step shapes the final cup</text>
+  </g>
+  
+  
+  <g>
+    <text x="140" y="480" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#6D4C41">咖啡樱桃人工采摘</text>
+    <text x="340" y="480" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#6D4C41">水洗或日晒处理</text>
+    <text x="540" y="480" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#6D4C41">高温烘焙释放香气</text>
+    <text x="740" y="480" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#6D4C41">研磨成不同粗细</text>
+    <text x="940" y="480" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#6D4C41">热水萃取精华</text>
+  </g>
+</svg>

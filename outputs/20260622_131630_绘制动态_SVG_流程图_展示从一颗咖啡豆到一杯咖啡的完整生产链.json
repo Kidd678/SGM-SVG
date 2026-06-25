@@ -1,0 +1,309 @@
+{
+  "prompt": "绘制动态 SVG 流程图，展示从一颗咖啡豆到一杯咖啡的完整生产链",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "咖啡生产链：从豆到杯",
+    "language": "zh",
+    "visual_type": "process",
+    "narrative": "展示咖啡从种植、采摘、处理、烘焙、研磨到冲泡的完整生产流程",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "咖啡生产链",
+        "summary": "主标题：展示从咖啡豆到一杯咖啡的完整旅程",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "subtitle",
+        "role": "subtitle",
+        "label": "从种植到杯中的完整流程",
+        "summary": "副标题说明流程范围",
+        "order": 1,
+        "importance": "secondary",
+        "connects": [
+          "title"
+        ]
+      },
+      {
+        "id": "step_bean",
+        "role": "process-node",
+        "label": "种植采摘",
+        "summary": "咖啡樱桃在种植园生长成熟后人工采摘",
+        "order": 2,
+        "importance": "primary",
+        "connects": [
+          "subtitle"
+        ]
+      },
+      {
+        "id": "step_processing",
+        "role": "process-node",
+        "label": "处理加工",
+        "summary": "采摘后的咖啡樱桃经过水洗或日晒处理，去除果肉获得生豆",
+        "order": 3,
+        "importance": "primary",
+        "connects": [
+          "step_bean"
+        ]
+      },
+      {
+        "id": "step_roasting",
+        "role": "process-node",
+        "label": "烘焙",
+        "summary": "生豆经过高温烘焙，释放香气和风味，变为深褐色咖啡豆",
+        "order": 4,
+        "importance": "primary",
+        "connects": [
+          "step_processing"
+        ]
+      },
+      {
+        "id": "step_grinding",
+        "role": "process-node",
+        "label": "研磨",
+        "summary": "烘焙后的咖啡豆研磨成不同粗细的咖啡粉",
+        "order": 5,
+        "importance": "primary",
+        "connects": [
+          "step_roasting"
+        ]
+      },
+      {
+        "id": "step_brewing",
+        "role": "process-node",
+        "label": "冲泡",
+        "summary": "咖啡粉通过热水萃取，变成一杯香浓的咖啡",
+        "order": 6,
+        "importance": "primary",
+        "connects": [
+          "step_grinding"
+        ]
+      },
+      {
+        "id": "step_cup",
+        "role": "focal",
+        "label": "一杯咖啡",
+        "summary": "最终成品：一杯香气四溢的咖啡",
+        "order": 7,
+        "importance": "primary",
+        "connects": [
+          "step_brewing"
+        ]
+      },
+      {
+        "id": "arrow_1",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接种植采摘到处理加工",
+        "order": 8,
+        "importance": "supporting",
+        "connects": [
+          "step_bean",
+          "step_processing"
+        ]
+      },
+      {
+        "id": "arrow_2",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接处理加工到烘焙",
+        "order": 9,
+        "importance": "supporting",
+        "connects": [
+          "step_processing",
+          "step_roasting"
+        ]
+      },
+      {
+        "id": "arrow_3",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接烘焙到研磨",
+        "order": 10,
+        "importance": "supporting",
+        "connects": [
+          "step_roasting",
+          "step_grinding"
+        ]
+      },
+      {
+        "id": "arrow_4",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接研磨到冲泡",
+        "order": 11,
+        "importance": "supporting",
+        "connects": [
+          "step_grinding",
+          "step_brewing"
+        ]
+      },
+      {
+        "id": "arrow_5",
+        "role": "connector",
+        "label": "→",
+        "summary": "连接冲泡到成品",
+        "order": 12,
+        "importance": "supporting",
+        "connects": [
+          "step_brewing",
+          "step_cup"
+        ]
+      },
+      {
+        "id": "note_quality",
+        "role": "annotation",
+        "label": "品质关键",
+        "summary": "每个环节都影响最终咖啡的风味和品质",
+        "order": 13,
+        "importance": "supporting",
+        "connects": [
+          "step_roasting"
+        ]
+      }
+    ],
+    "style_hints": [
+      "使用暖色调（棕色系）体现咖啡主题",
+      "流程节点使用圆形或圆角矩形",
+      "使用箭头动画展示流程方向",
+      "每个步骤可添加图标增强可视化",
+      "整体布局采用水平流程或环形布局"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 7.6,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0.0,
+        "duration": 0.55,
+        "reason": "Reveal 咖啡生产链 according to scene order."
+      },
+      {
+        "target_id": "subtitle",
+        "effect": "fade-slide",
+        "start": 0.55,
+        "duration": 0.45,
+        "reason": "Reveal 从种植到杯中的完整流程 according to scene order."
+      },
+      {
+        "target_id": "step_bean",
+        "effect": "fade-slide",
+        "start": 1.1,
+        "duration": 0.55,
+        "reason": "Reveal 种植采摘 according to scene order."
+      },
+      {
+        "target_id": "step_processing",
+        "effect": "fade-slide",
+        "start": 1.65,
+        "duration": 0.55,
+        "reason": "Reveal 处理加工 according to scene order."
+      },
+      {
+        "target_id": "step_roasting",
+        "effect": "fade-slide",
+        "start": 2.2,
+        "duration": 0.55,
+        "reason": "Reveal 烘焙 according to scene order."
+      },
+      {
+        "target_id": "step_grinding",
+        "effect": "fade-slide",
+        "start": 2.75,
+        "duration": 0.55,
+        "reason": "Reveal 研磨 according to scene order."
+      },
+      {
+        "target_id": "step_brewing",
+        "effect": "fade-slide",
+        "start": 3.3,
+        "duration": 0.55,
+        "reason": "Reveal 冲泡 according to scene order."
+      },
+      {
+        "target_id": "step_cup",
+        "effect": "pop",
+        "start": 3.85,
+        "duration": 0.55,
+        "reason": "Reveal 一杯咖啡 according to scene order."
+      },
+      {
+        "target_id": "arrow_1",
+        "effect": "draw-line",
+        "start": 4.55,
+        "duration": 0.55,
+        "reason": "Reveal → according to scene order."
+      },
+      {
+        "target_id": "arrow_2",
+        "effect": "draw-line",
+        "start": 5.1,
+        "duration": 0.55,
+        "reason": "Reveal → according to scene order."
+      },
+      {
+        "target_id": "arrow_3",
+        "effect": "draw-line",
+        "start": 5.65,
+        "duration": 0.55,
+        "reason": "Reveal → according to scene order."
+      },
+      {
+        "target_id": "arrow_4",
+        "effect": "draw-line",
+        "start": 6.2,
+        "duration": 0.55,
+        "reason": "Reveal → according to scene order."
+      },
+      {
+        "target_id": "arrow_5",
+        "effect": "draw-line",
+        "start": 6.75,
+        "duration": 0.55,
+        "reason": "Reveal → according to scene order."
+      },
+      {
+        "target_id": "note_quality",
+        "effect": "fade-slide",
+        "start": 7.15,
+        "duration": 0.45,
+        "reason": "Reveal 品质关键 according to scene order."
+      }
+    ],
+    "final_frame_rule": "All semantic content remains visible and readable."
+  },
+  "metrics": {
+    "elapsed_seconds": 95.07,
+    "geometry_error_count": 0,
+    "animation_error_count": 0,
+    "minimum_font_size": 14.0,
+    "final_text_count": 16,
+    "total_issues": 0
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_131630_绘制动态_SVG_流程图_展示从一颗咖啡豆到一杯咖啡的完整生产链.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_131630_绘制动态_SVG_流程图_展示从一颗咖啡豆到一杯咖啡的完整生产链.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_131630_绘制动态_SVG_流程图_展示从一颗咖啡豆到一杯咖啡的完整生产链.json",
+  "issues": [],
+  "browser_metrics": {
+    "final_text_count": 16,
+    "final_essential_count": 6,
+    "final_container_count": 6,
+    "final_panel_count": 0,
+    "minimum_font_size": 14,
+    "geometry_error_count": 0,
+    "layout_penalty": 0,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 14,
+    "direct_animation_block_count": 6,
+    "direct_animation_animated_block_count": 6,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 6
+  }
+}

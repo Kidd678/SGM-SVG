@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <style id="v2-motion-style">
+@keyframes v2FadeSlide { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes v2Pop { 0% { opacity: 0; transform: scale(.92); } 70% { opacity: 1; transform: scale(1.03); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes v2Fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes v2Draw { from { opacity: 1; stroke-dashoffset: 900; } to { opacity: 1; stroke-dashoffset: 0; } }
+@keyframes v2Highlight { 0% { opacity: 0; } 40% { opacity: 1; filter: brightness(1.18); } 100% { opacity: 1; filter: brightness(1); } }
+#title { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 0.00s; }
+#subtitle { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 0.50s; }
+#youtube { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.50s ease forwards; animation-delay: 1.20s; }
+#tiktok { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 1.90s; }
+#kuaishou { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 2.60s; }
+#connector_yt_tt { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.40s ease forwards; animation-delay: 3.20s; }
+#connector_tt_ks { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.40s ease forwards; animation-delay: 3.70s; }
+#note { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Fade 0.40s ease forwards; animation-delay: 4.10s; }
+</style><defs>
+    <linearGradient id="ytGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF0000" />
+      <stop offset="100%" style="stop-color:#CC0000" />
+    </linearGradient>
+    <linearGradient id="ttGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00F2EA" />
+      <stop offset="100%" style="stop-color:#FF0050" />
+    </linearGradient>
+    <linearGradient id="ksGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF4906" />
+      <stop offset="100%" style="stop-color:#FF0000" />
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  
+  <rect width="1200" height="800" fill="#F8F9FA" />
+  
+  
+  <g id="title" data-role="title" data-order="0">
+    <text x="600" y="60" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#1A1A2E" text-anchor="middle">Video Platform Comparison</text>
+  </g>
+  
+  
+  <g id="subtitle" data-role="subtitle" data-order="1">
+    <text x="600" y="100" font-family="Arial, sans-serif" font-size="20" fill="#666" text-anchor="middle">Number of Videos by Platform</text>
+  </g>
+  
+  
+  <g id="youtube" data-role="focal" data-order="2">
+    <circle cx="250" cy="350" r="180" fill="url(#ytGradient)" opacity="0.9" />
+    <text x="250" y="345" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">YouTube</text>
+    <text x="250" y="380" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">Largest Platform</text>
+  </g>
+  
+  
+  <g id="tiktok" data-role="card" data-order="3">
+    <circle cx="600" cy="350" r="80" fill="url(#ttGradient)" opacity="0.9" />
+    <text x="600" y="345" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">TikTok</text>
+    <text x="600" y="374" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Medium</text>
+  </g>
+  
+  
+  <g id="kuaishou" data-role="card" data-order="4">
+    <circle cx="850" cy="350" r="45" fill="url(#ksGradient)" opacity="0.9" />
+    <text x="850" y="345" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Kuaishou</text>
+    <text x="850" y="366" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">Baseline</text>
+  </g>
+  
+  
+  <g id="connector_yt_tt" data-role="connector" data-order="5">
+    <line x1="420" y1="350" x2="530" y2="350" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)" />
+    <rect x="440" y="300" width="70" height="40" rx="20" fill="#FFF" stroke="#333" stroke-width="2" />
+    <text x="475" y="327" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">10×</text>
+  </g>
+  
+  
+  <g id="connector_tt_ks" data-role="connector" data-order="6">
+    <line x1="670" y1="350" x2="810" y2="350" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)" />
+    <rect x="710" y="300" width="60" height="40" rx="20" fill="#FFF" stroke="#333" stroke-width="2" />
+    <text x="740" y="327" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">2×</text>
+  </g>
+  
+  
+  <g id="note" data-role="annotation" data-order="7">
+    <text x="600" y="750" font-family="Arial, sans-serif" font-size="16" fill="#888" text-anchor="middle">Based on estimated video counts</text>
+  </g>
+  
+  
+  <g id="legend" data-role="annotation" data-order="8">
+    <text x="600" y="550" font-family="Arial, sans-serif" font-size="18" fill="#555" text-anchor="middle" font-weight="bold">Circle size represents relative video count</text>
+  </g>
+</svg>

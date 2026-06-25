@@ -1,0 +1,319 @@
+{
+  "prompt": "中山大学的发展历程",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "中山大学的发展历程",
+    "language": "zh",
+    "visual_type": "timeline",
+    "narrative": "通过时间轴展示中山大学从1924年创校至今的重要发展里程碑",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "中山大学发展历程",
+        "summary": "主标题，展示 infographic 主题",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "subtitle",
+        "role": "subtitle",
+        "label": "1924-至今",
+        "summary": "时间跨度说明",
+        "order": 1,
+        "importance": "secondary",
+        "connects": []
+      },
+      {
+        "id": "event_1924_founding",
+        "role": "event",
+        "label": "1924 创校",
+        "summary": "国立广东大学成立，开启百年征程",
+        "order": 2,
+        "importance": "primary",
+        "connects": [
+          "connector_1"
+        ]
+      },
+      {
+        "id": "event_1924_naming",
+        "role": "event",
+        "label": "1924 命名",
+        "summary": "更名为国立中山大学，纪念孙中山先生",
+        "order": 3,
+        "importance": "primary",
+        "connects": [
+          "connector_2"
+        ]
+      },
+      {
+        "id": "event_1930s",
+        "role": "event",
+        "label": "1930s 发展",
+        "summary": "院系扩展，学术实力增强",
+        "order": 4,
+        "importance": "secondary",
+        "connects": [
+          "connector_3"
+        ]
+      },
+      {
+        "id": "event_1952",
+        "role": "event",
+        "label": "1952 调整",
+        "summary": "全国高校院系调整，奠定现代学科基础",
+        "order": 5,
+        "importance": "secondary",
+        "connects": [
+          "connector_4"
+        ]
+      },
+      {
+        "id": "event_1977",
+        "role": "event",
+        "label": "1977 恢复",
+        "summary": "恢复高考招生，迎来发展新机遇",
+        "order": 6,
+        "importance": "primary",
+        "connects": [
+          "connector_5"
+        ]
+      },
+      {
+        "id": "event_2000s",
+        "role": "event",
+        "label": "2000s 腾飞",
+        "summary": "建设世界一流大学，综合实力显著提升",
+        "order": 7,
+        "importance": "primary",
+        "connects": [
+          "connector_6"
+        ]
+      },
+      {
+        "id": "connector_1",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1924创校到命名",
+        "order": 8,
+        "importance": "supporting",
+        "connects": [
+          "event_1924_founding",
+          "event_1924_naming"
+        ]
+      },
+      {
+        "id": "connector_2",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1924命名到1930s发展",
+        "order": 9,
+        "importance": "supporting",
+        "connects": [
+          "event_1924_naming",
+          "event_1930s"
+        ]
+      },
+      {
+        "id": "connector_3",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1930s到1952调整",
+        "order": 10,
+        "importance": "supporting",
+        "connects": [
+          "event_1930s",
+          "event_1952"
+        ]
+      },
+      {
+        "id": "connector_4",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1952到1977恢复",
+        "order": 11,
+        "importance": "supporting",
+        "connects": [
+          "event_1952",
+          "event_1977"
+        ]
+      },
+      {
+        "id": "connector_5",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1977到2000s",
+        "order": 12,
+        "importance": "supporting",
+        "connects": [
+          "event_1977",
+          "event_2000s"
+        ]
+      },
+      {
+        "id": "timeline_axis",
+        "role": "background",
+        "label": "时间轴",
+        "summary": "横向时间轴基准线",
+        "order": 13,
+        "importance": "supporting",
+        "connects": []
+      }
+    ],
+    "style_hints": [
+      "使用学校标志性建筑元素",
+      "采用红色和金色为主色调体现历史厚重感",
+      "时间轴从左到右依次展开动画",
+      "重要年份节点使用较大图标突出"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 12.0,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0.0,
+        "duration": 1.0,
+        "reason": "主标题首先出现，建立 infographic 主题"
+      },
+      {
+        "target_id": "subtitle",
+        "effect": "fade-slide",
+        "start": 0.8,
+        "duration": 0.8,
+        "reason": "副标题紧跟主标题，说明时间跨度"
+      },
+      {
+        "target_id": "timeline_axis",
+        "effect": "fade",
+        "start": 2.0,
+        "duration": 1.0,
+        "reason": "时间轴基准线淡入，为后续事件提供视觉框架"
+      },
+      {
+        "target_id": "event_1924_founding",
+        "effect": "pop",
+        "start": 3.2,
+        "duration": 0.8,
+        "reason": "首个重要里程碑，1924年创校作为历史起点"
+      },
+      {
+        "target_id": "connector_1",
+        "effect": "draw-line",
+        "start": 4.0,
+        "duration": 0.5,
+        "reason": "连接创校到命名两个相关事件"
+      },
+      {
+        "target_id": "event_1924_naming",
+        "effect": "pop",
+        "start": 4.5,
+        "duration": 0.8,
+        "reason": "1924年命名事件，纪念孙中山先生"
+      },
+      {
+        "target_id": "connector_2",
+        "effect": "draw-line",
+        "start": 5.3,
+        "duration": 0.5,
+        "reason": "连接命名到1930年代发展"
+      },
+      {
+        "target_id": "event_1930s",
+        "effect": "fade-slide",
+        "start": 5.8,
+        "duration": 0.7,
+        "reason": "1930年代院系扩展，学术实力增强"
+      },
+      {
+        "target_id": "connector_3",
+        "effect": "draw-line",
+        "start": 6.5,
+        "duration": 0.5,
+        "reason": "连接1930年代到1952年调整"
+      },
+      {
+        "target_id": "event_1952",
+        "effect": "fade-slide",
+        "start": 7.0,
+        "duration": 0.7,
+        "reason": "1952年全国高校院系调整，奠定现代学科基础"
+      },
+      {
+        "target_id": "connector_4",
+        "effect": "draw-line",
+        "start": 7.7,
+        "duration": 0.5,
+        "reason": "连接1952年到1977年恢复高考"
+      },
+      {
+        "target_id": "event_1977",
+        "effect": "pop",
+        "start": 8.2,
+        "duration": 0.8,
+        "reason": "1977年恢复高考招生，重要转折点"
+      },
+      {
+        "target_id": "connector_5",
+        "effect": "draw-line",
+        "start": 9.0,
+        "duration": 0.5,
+        "reason": "连接1977年到2000年代腾飞"
+      },
+      {
+        "target_id": "event_2000s",
+        "effect": "pop",
+        "start": 9.5,
+        "duration": 1.0,
+        "reason": "2000年代建设世界一流大学，综合实力显著提升，作为时间轴终点"
+      },
+      {
+        "target_id": "title",
+        "effect": "highlight",
+        "start": 10.5,
+        "duration": 1.5,
+        "reason": "最终帧突出主标题，确保所有语义内容完整可读"
+      }
+    ],
+    "final_frame_rule": "所有8个事件节点、5条连接线和时间轴完整显示，标题与副标题保持高亮，重要年份节点（1924创校、1977恢复、2000s腾飞）突出展示"
+  },
+  "metrics": {
+    "elapsed_seconds": 153.59,
+    "geometry_error_count": 1,
+    "animation_error_count": 0,
+    "minimum_font_size": 12.0,
+    "final_text_count": 29,
+    "total_issues": 1
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_140639_中山大学的发展历程.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_140639_中山大学的发展历程.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_140639_中山大学的发展历程.json",
+  "issues": [
+    {
+      "severity": "error",
+      "category": "font_too_small",
+      "element_id": "",
+      "description": "最终帧有 1 段文字小于 14px。示例：[('百年树人 砥砺前行', 12)]",
+      "fix_instruction": "保留构图和视觉隐喻，将所有可见文字提高到至少 14px；正文至少 16px，空间不足时删减次要文案或扩大容器。"
+    }
+  ],
+  "browser_metrics": {
+    "final_text_count": 29,
+    "final_essential_count": 7,
+    "final_container_count": 7,
+    "final_panel_count": 0,
+    "minimum_font_size": 12,
+    "geometry_error_count": 1,
+    "layout_penalty": 20,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 14,
+    "direct_animation_block_count": 7,
+    "direct_animation_animated_block_count": 6,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 6
+  }
+}

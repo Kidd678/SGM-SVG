@@ -1,0 +1,256 @@
+{
+  "prompt": "通俗易懂地解释词向量（Word Embedding）的基本概念",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "词向量 (Word Embedding)",
+    "language": "zh",
+    "visual_type": "concept",
+    "narrative": "通过将文字转换为数字向量，让计算机能够理解和计算词语之间的语义关系",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "词向量",
+        "summary": "主标题：词向量 (Word Embedding)",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "subtitle",
+        "role": "subtitle",
+        "label": "通俗易懂的解释",
+        "summary": "副标题说明这是简单易懂的解释",
+        "order": 1,
+        "importance": "secondary",
+        "connects": []
+      },
+      {
+        "id": "problem",
+        "role": "focal",
+        "label": "计算机不懂文字",
+        "summary": "问题：计算机只能处理数字，无法直接理解文字",
+        "order": 2,
+        "importance": "primary",
+        "connects": [
+          "solution"
+        ]
+      },
+      {
+        "id": "arrow_1",
+        "role": "connector",
+        "label": "→",
+        "summary": "箭头连接问题到解决方案",
+        "order": 3,
+        "importance": "secondary",
+        "connects": [
+          "problem",
+          "solution"
+        ]
+      },
+      {
+        "id": "solution",
+        "role": "process-node",
+        "label": "转换为数字向量",
+        "summary": "解决方案：把文字转换成数字向量",
+        "order": 4,
+        "importance": "primary",
+        "connects": [
+          "concept_box"
+        ]
+      },
+      {
+        "id": "concept_box",
+        "role": "card",
+        "label": "词向量 = 词的数字表示",
+        "summary": "词向量的定义：用一组数字来表示一个词",
+        "order": 5,
+        "importance": "primary",
+        "connects": [
+          "space_visual"
+        ]
+      },
+      {
+        "id": "space_visual",
+        "role": "focal",
+        "label": "语义空间示意图",
+        "summary": "可视化展示：词语在向量空间中的位置",
+        "order": 6,
+        "importance": "primary",
+        "connects": [
+          "similar_words",
+          "vector_example"
+        ]
+      },
+      {
+        "id": "similar_words",
+        "role": "annotation",
+        "label": "相似词靠得更近",
+        "summary": "关键洞察：语义相近的词在空间中距离更近",
+        "order": 7,
+        "importance": "primary",
+        "connects": [
+          "space_visual"
+        ]
+      },
+      {
+        "id": "vector_example",
+        "role": "event",
+        "label": "king - man + woman ≈ queen",
+        "summary": "经典例子：向量运算展示语义关系",
+        "order": 8,
+        "importance": "primary",
+        "connects": [
+          "space_visual"
+        ]
+      },
+      {
+        "id": "arrow_2",
+        "role": "connector",
+        "label": "→",
+        "summary": "箭头连接概念到应用",
+        "order": 9,
+        "importance": "secondary",
+        "connects": [
+          "vector_example",
+          "applications"
+        ]
+      },
+      {
+        "id": "applications",
+        "role": "card",
+        "label": "应用：搜索、翻译、推荐",
+        "summary": "实际应用场景",
+        "order": 10,
+        "importance": "supporting",
+        "connects": []
+      }
+    ],
+    "style_hints": [
+      "使用简洁的图标和色块",
+      "向量空间用二维点阵图表示",
+      "关键概念用高亮色块突出",
+      "动画按顺序逐步揭示各元素"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 9.0,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0.0,
+        "duration": 0.8,
+        "reason": "主标题首先出现，建立主题"
+      },
+      {
+        "target_id": "subtitle",
+        "effect": "fade",
+        "start": 0.8,
+        "duration": 0.6,
+        "reason": "副标题淡入，说明这是通俗解释"
+      },
+      {
+        "target_id": "problem",
+        "effect": "pop",
+        "start": 1.6,
+        "duration": 0.8,
+        "reason": "问题节点弹出，吸引注意力"
+      },
+      {
+        "target_id": "arrow_1",
+        "effect": "draw-line",
+        "start": 2.5,
+        "duration": 0.4,
+        "reason": "箭头绘制，连接问题到解决方案"
+      },
+      {
+        "target_id": "solution",
+        "effect": "fade-slide",
+        "start": 3.0,
+        "duration": 0.8,
+        "reason": "解决方案出现，展示核心方法"
+      },
+      {
+        "target_id": "concept_box",
+        "effect": "fade-slide",
+        "start": 3.9,
+        "duration": 0.8,
+        "reason": "概念卡片定义词向量"
+      },
+      {
+        "target_id": "space_visual",
+        "effect": "fade",
+        "start": 4.8,
+        "duration": 1.0,
+        "reason": "语义空间示意图展示词语分布"
+      },
+      {
+        "target_id": "similar_words",
+        "effect": "highlight",
+        "start": 5.9,
+        "duration": 0.7,
+        "reason": "高亮标注相似词距离关系"
+      },
+      {
+        "target_id": "vector_example",
+        "effect": "pop",
+        "start": 6.7,
+        "duration": 0.8,
+        "reason": "向量运算例子突出语义关系"
+      },
+      {
+        "target_id": "arrow_2",
+        "effect": "draw-line",
+        "start": 7.6,
+        "duration": 0.4,
+        "reason": "箭头连接例子到应用"
+      },
+      {
+        "target_id": "applications",
+        "effect": "fade-slide",
+        "start": 8.1,
+        "duration": 0.8,
+        "reason": "应用场景收尾，展示实际价值"
+      }
+    ],
+    "final_frame_rule": "所有语义内容保持可见，标题、副标题、问题、解决方案、概念卡片、语义空间、相似词标注、向量例子和应用场景均清晰可读"
+  },
+  "metrics": {
+    "elapsed_seconds": 112.44,
+    "geometry_error_count": 1,
+    "animation_error_count": 0,
+    "minimum_font_size": 12.0,
+    "final_text_count": 25,
+    "total_issues": 1
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_142419_通俗易懂地解释词向量_Word_Embedding_的基本概念.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_142419_通俗易懂地解释词向量_Word_Embedding_的基本概念.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_142419_通俗易懂地解释词向量_Word_Embedding_的基本概念.json",
+  "issues": [
+    {
+      "severity": "error",
+      "category": "font_too_small",
+      "element_id": "",
+      "description": "最终帧有 3 段文字小于 14px。示例：[('king = [0.82,', 12), ('-0.15, 0.47, ...]', 12), ('300维向量', 12)]",
+      "fix_instruction": "保留构图和视觉隐喻，将所有可见文字提高到至少 14px；正文至少 16px，空间不足时删减次要文案或扩大容器。"
+    }
+  ],
+  "browser_metrics": {
+    "final_text_count": 25,
+    "final_essential_count": 6,
+    "final_container_count": 6,
+    "final_panel_count": 0,
+    "minimum_font_size": 12,
+    "geometry_error_count": 1,
+    "layout_penalty": 60,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 10,
+    "direct_animation_block_count": 6,
+    "direct_animation_animated_block_count": 6,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 6
+  }
+}

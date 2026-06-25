@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  
+  <style id="v2-motion-style">
+@keyframes v2FadeSlide { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes v2Pop { 0% { opacity: 0; transform: scale(.92); } 70% { opacity: 1; transform: scale(1.03); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes v2Fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes v2Draw { from { opacity: 1; stroke-dashoffset: 900; } to { opacity: 1; stroke-dashoffset: 0; } }
+@keyframes v2Highlight { 0% { opacity: 0; } 40% { opacity: 1; filter: brightness(1.18); } 100% { opacity: 1; filter: brightness(1); } }
+#title { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Fade 0.50s ease forwards; animation-delay: 0.00s; }
+#youtube { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.50s ease forwards; animation-delay: 0.50s; }
+#tiktok { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 1.00s; }
+#kuaishou { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 1.50s; }
+#connector_yt_tk { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.30s ease forwards; animation-delay: 2.00s; }
+#connector_tk_ks { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.30s ease forwards; animation-delay: 2.30s; }
+#subtitle { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Fade 0.40s ease forwards; animation-delay: 2.60s; }
+</style><rect width="1200" height="800" fill="#f8f9fa" />
+  
+  
+  <g id="title" data-role="title" data-order="0">
+    <text x="600" y="60" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="#1a1a2e">三大平台视频数量对比</text>
+  </g>
+  
+  
+  <g id="subtitle" data-role="subtitle" data-order="6">
+    <text x="600" y="100" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" text-anchor="middle" fill="#666">视频数量相对关系</text>
+  </g>
+  
+  
+  <g id="kuaishou" data-role="focal" data-order="3">
+    <circle cx="200" cy="400" r="50" fill="#ff6b6b" opacity="0.9" />
+    <text x="200" y="395" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#fff">快手</text>
+    <text x="200" y="420" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" text-anchor="middle" fill="#fff">1×</text>
+  </g>
+  
+  
+  <g id="tiktok" data-role="focal" data-order="2">
+    <circle cx="550" cy="400" r="100" fill="#4ecdc4" opacity="0.9" />
+    <text x="550" y="390" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#fff">TikTok</text>
+    <text x="550" y="420" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" text-anchor="middle" fill="#fff">2× 快手</text>
+  </g>
+  
+  
+  <g id="youtube" data-role="focal" data-order="1">
+    <circle cx="950" cy="400" r="180" fill="#ff4757" opacity="0.9" />
+    <text x="950" y="385" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#fff">YouTube</text>
+    <text x="950" y="420" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" text-anchor="middle" fill="#fff">10× TikTok</text>
+    <text x="950" y="445" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" text-anchor="middle" fill="#fff">(20× 快手)</text>
+  </g>
+  
+  
+  <g id="connector_tk_ks" data-role="connector" data-order="5">
+    <line x1="260" y1="400" x2="440" y2="400" stroke="#333" stroke-width="3" />
+    <polygon points="430,395 445,400 430,405" fill="#333" />
+    <rect x="315" y="360" width="50" height="30" rx="6" fill="#4ecdc4" />
+    <text x="340" y="380" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#fff">2×</text>
+  </g>
+  
+  
+  <g id="connector_yt_tk" data-role="connector" data-order="4">
+    <line x1="660" y1="400" x2="760" y2="400" stroke="#333" stroke-width="3" />
+    <polygon points="750,395 765,400 750,405" fill="#333" />
+    <rect x="680" y="360" width="60" height="30" rx="6" fill="#ff4757" />
+    <text x="710" y="380" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#fff">10×</text>
+  </g>
+  
+  
+  <g id="legend" data-role="supporting" data-order="7">
+    <rect x="300" y="620" width="600" height="80" rx="10" fill="#fff" stroke="#e0e0e0" stroke-width="2" />
+    <text x="600" y="655" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" text-anchor="middle" fill="#333">
+      <tspan font-weight="bold">YouTube</tspan> 视频数量是 <tspan font-weight="bold">TikTok</tspan> 的 10 倍
+    </text>
+    <text x="600" y="685" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" text-anchor="middle" fill="#333">
+      <tspan font-weight="bold">TikTok</tspan> 视频数量是 <tspan font-weight="bold">快手</tspan> 的 2 倍
+    </text>
+  </g>
+</svg>

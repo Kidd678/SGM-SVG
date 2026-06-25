@@ -1,0 +1,260 @@
+{
+  "prompt": "大语言模型的基本原理",
+  "model_id": "deepseek-v4-pro",
+  "scene_graph": {
+    "title": "大语言模型的基本原理",
+    "language": "zh",
+    "visual_type": "process",
+    "narrative": "从海量文本语料出发，经历预训练获得Transformer基础模型，融入自注意力机制，经指令微调后实现自回归文本生成。",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "大语言模型基本原理",
+        "summary": "整张图的标题，揭示主题",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "corpus",
+        "role": "process-node",
+        "label": "海量文本语料",
+        "summary": "互联网书籍文章等原始数据",
+        "order": 1,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "arrow_corpus_to_pretrain",
+        "role": "connector",
+        "label": "",
+        "summary": "数据进入自监督预训练",
+        "order": 2,
+        "importance": "supporting",
+        "connects": [
+          "corpus",
+          "pretrain"
+        ]
+      },
+      {
+        "id": "pretrain",
+        "role": "process-node",
+        "label": "预训练 (自监督学习)",
+        "summary": "在大规模语料上预测下一个词，学习语言规律",
+        "order": 3,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "arrow_pretrain_to_transformer",
+        "role": "connector",
+        "label": "",
+        "summary": "训练得到基础Transformer模型",
+        "order": 4,
+        "importance": "supporting",
+        "connects": [
+          "pretrain",
+          "transformer"
+        ]
+      },
+      {
+        "id": "transformer",
+        "role": "process-node",
+        "label": "Transformer 架构",
+        "summary": "核心神经网络，堆叠多层自注意力与前馈网络",
+        "order": 5,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "attention",
+        "role": "annotation",
+        "label": "自注意力机制",
+        "summary": "全局建模词间关系，捕获长程依赖",
+        "order": 6,
+        "importance": "secondary",
+        "connects": [
+          "transformer"
+        ]
+      },
+      {
+        "id": "arrow_transformer_to_finetune",
+        "role": "connector",
+        "label": "",
+        "summary": "基础模型进入微调阶段",
+        "order": 7,
+        "importance": "supporting",
+        "connects": [
+          "transformer",
+          "finetune"
+        ]
+      },
+      {
+        "id": "finetune",
+        "role": "process-node",
+        "label": "指令微调",
+        "summary": "用高质量对话和指令数据对齐人类意图",
+        "order": 8,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "arrow_finetune_to_generation",
+        "role": "connector",
+        "label": "",
+        "summary": "微调后的模型用于实际生成",
+        "order": 9,
+        "importance": "supporting",
+        "connects": [
+          "finetune",
+          "generation"
+        ]
+      },
+      {
+        "id": "generation",
+        "role": "process-node",
+        "label": "自回归文本生成",
+        "summary": "逐词预测输出，产生流畅连贯的回答",
+        "order": 10,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "conclusion",
+        "role": "focal",
+        "label": "大语言模型 = 数据 + 架构 + 生成",
+        "summary": "掌握三大支柱即可理解基本原理",
+        "order": 11,
+        "importance": "primary",
+        "connects": []
+      }
+    ],
+    "style_hints": [
+      "clean and modern layout",
+      "blue-teal gradient palette",
+      "rounded process nodes",
+      "directed arrows with subtle animations",
+      "card-style emphasis for conclusion"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 6.0,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0.0,
+        "duration": 0.5,
+        "reason": "标题率先出现，奠定主题。"
+      },
+      {
+        "target_id": "corpus",
+        "effect": "fade-slide",
+        "start": 0.5,
+        "duration": 0.5,
+        "reason": "流程起点，展现数据基础。"
+      },
+      {
+        "target_id": "pretrain",
+        "effect": "fade-slide",
+        "start": 1.0,
+        "duration": 0.5,
+        "reason": "预训练承接语料，揭示学习过程。"
+      },
+      {
+        "target_id": "arrow_corpus_to_pretrain",
+        "effect": "draw-line",
+        "start": 1.5,
+        "duration": 0.5,
+        "reason": "语料与预训练均已可见后，绘制连接。"
+      },
+      {
+        "target_id": "transformer",
+        "effect": "fade-slide",
+        "start": 2.0,
+        "duration": 0.5,
+        "reason": "核心架构出现，体现技术创新。"
+      },
+      {
+        "target_id": "attention",
+        "effect": "pop",
+        "start": 2.5,
+        "duration": 0.4,
+        "reason": "自注意力作为关键机制弹出说明。"
+      },
+      {
+        "target_id": "arrow_pretrain_to_transformer",
+        "effect": "draw-line",
+        "start": 2.9,
+        "duration": 0.5,
+        "reason": "预训练到Transformer的箭头在二者均可见后绘制。"
+      },
+      {
+        "target_id": "finetune",
+        "effect": "fade-slide",
+        "start": 3.4,
+        "duration": 0.5,
+        "reason": "指令微调阶段开始，连接实际应用。"
+      },
+      {
+        "target_id": "arrow_transformer_to_finetune",
+        "effect": "draw-line",
+        "start": 3.9,
+        "duration": 0.5,
+        "reason": "在Transformer和微调节点均可见后绘制连接。"
+      },
+      {
+        "target_id": "generation",
+        "effect": "fade-slide",
+        "start": 4.4,
+        "duration": 0.5,
+        "reason": "展示最终生成能力。"
+      },
+      {
+        "target_id": "arrow_finetune_to_generation",
+        "effect": "draw-line",
+        "start": 4.9,
+        "duration": 0.5,
+        "reason": "微调与生成的连接最后出现。"
+      },
+      {
+        "target_id": "conclusion",
+        "effect": "fade-slide",
+        "start": 5.4,
+        "duration": 0.6,
+        "reason": "总结公式作为收束，突出核心洞见。"
+      }
+    ],
+    "final_frame_rule": "All semantic content remains visible and readable."
+  },
+  "metrics": {
+    "elapsed_seconds": 357.28,
+    "geometry_error_count": 0,
+    "animation_error_count": 0,
+    "minimum_font_size": 15.0,
+    "final_text_count": 17,
+    "total_issues": 0
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_140344_大语言模型的基本原理.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_140344_大语言模型的基本原理.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_140344_大语言模型的基本原理.json",
+  "issues": [],
+  "browser_metrics": {
+    "final_text_count": 17,
+    "final_essential_count": 6,
+    "final_container_count": 6,
+    "final_panel_count": 0,
+    "minimum_font_size": 15,
+    "geometry_error_count": 0,
+    "layout_penalty": 0,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 12,
+    "direct_animation_block_count": 6,
+    "direct_animation_animated_block_count": 6,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 6
+  }
+}

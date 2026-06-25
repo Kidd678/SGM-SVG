@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <style id="v2-motion-style">
+@keyframes v2FadeSlide { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes v2Pop { 0% { opacity: 0; transform: scale(.92); } 70% { opacity: 1; transform: scale(1.03); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes v2Fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes v2Draw { from { opacity: 1; stroke-dashoffset: 900; } to { opacity: 1; stroke-dashoffset: 0; } }
+@keyframes v2Highlight { 0% { opacity: 0; } 40% { opacity: 1; filter: brightness(1.18); } 100% { opacity: 1; filter: brightness(1); } }
+#bg_pattern { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Fade 1.00s ease forwards; animation-delay: 0.00s; }
+#title { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 1.00s ease forwards; animation-delay: 0.50s; }
+#subtitle { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.80s ease forwards; animation-delay: 1.20s; }
+#input_box { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 0.80s ease forwards; animation-delay: 2.00s; }
+#connector_1 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.50s ease forwards; animation-delay: 2.80s; }
+#tokenization { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.80s ease forwards; animation-delay: 3.20s; }
+#connector_2 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.50s ease forwards; animation-delay: 4.00s; }
+#embedding { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.80s ease forwards; animation-delay: 4.40s; }
+#connector_3 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.50s ease forwards; animation-delay: 5.20s; }
+#transformer { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 1.20s ease forwards; animation-delay: 5.60s; }
+#annotation_pretrain { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Fade 0.60s ease forwards; animation-delay: 6.50s; }
+#annotation_finetune { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Fade 0.60s ease forwards; animation-delay: 6.80s; }
+#connector_4 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.50s ease forwards; animation-delay: 7.50s; }
+#attention { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 1.00s ease forwards; animation-delay: 7.90s; }
+#connector_5 { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.50s ease forwards; animation-delay: 8.90s; }
+#output { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Pop 1.00s ease forwards; animation-delay: 9.30s; }
+#transformer { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Highlight 1.50s ease forwards; animation-delay: 10.50s; }
+</style><defs>
+    
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f9ff" />
+      <stop offset="100%" style="stop-color:#eef2ff" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff" />
+      <stop offset="100%" style="stop-color:#f8fafc" />
+    </linearGradient>
+    <linearGradient id="focalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6" />
+      <stop offset="100%" style="stop-color:#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6" />
+      <stop offset="100%" style="stop-color:#8b5cf6" />
+    </linearGradient>
+    
+    
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="0.5" />
+    </pattern>
+    
+    
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8b5cf6" />
+    </marker>
+    
+    
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1e293b" flood-opacity="0.1" />
+    </filter>
+  </defs>
+  
+  
+  <rect width="1200" height="800" fill="url(#bgGradient)" />
+  <rect width="1200" height="800" fill="url(#gridPattern)" opacity="0.5" />
+  
+  
+  <g id="title" data-role="title" data-order="0">
+    <text x="600" y="60" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="42" font-weight="bold" fill="#1e293b" text-anchor="middle">大语言模型的基本原理</text>
+  </g>
+  
+  
+  <g id="subtitle" data-role="subtitle" data-order="1">
+    <text x="600" y="100" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">从输入到输出的智能生成过程</text>
+  </g>
+  
+  
+  <g id="process_flow">
+    
+    <g id="input_box" data-role="process-node" data-order="2">
+      <rect x="80" y="280" width="140" height="80" rx="12" fill="url(#cardGradient)" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)" />
+      <text x="150" y="312" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">用户输入</text>
+      <text x="150" y="340" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Prompt</text>
+    </g>
+    
+    
+    <g id="connector_1" data-role="connector" data-order="4">
+      <line x1="220" y1="320" x2="280" y2="320" stroke="url(#arrowGradient)" stroke-width="2" marker-end="url(#arrowHead)" />
+    </g>
+    
+    
+    <g id="tokenization" data-role="process-node" data-order="3">
+      <rect x="280" y="280" width="140" height="80" rx="12" fill="url(#cardGradient)" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)" />
+      <text x="350" y="312" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">分词</text>
+      <text x="350" y="340" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Tokenization</text>
+    </g>
+    
+    
+    <g id="connector_2" data-role="connector" data-order="6">
+      <line x1="420" y1="320" x2="480" y2="320" stroke="url(#arrowGradient)" stroke-width="2" marker-end="url(#arrowHead)" />
+    </g>
+    
+    
+    <g id="embedding" data-role="process-node" data-order="5">
+      <rect x="480" y="280" width="140" height="80" rx="12" fill="url(#cardGradient)" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)" />
+      <text x="550" y="312" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">词嵌入</text>
+      <text x="550" y="340" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Embedding</text>
+    </g>
+    
+    
+    <g id="connector_3" data-role="connector" data-order="8">
+      <line x1="620" y1="320" x2="680" y2="320" stroke="url(#arrowGradient)" stroke-width="2" marker-end="url(#arrowHead)" />
+    </g>
+    
+    
+    <g id="transformer" data-role="focal" data-order="7">
+      <rect x="680" y="250" width="200" height="140" rx="16" fill="url(#focalGradient)" stroke="#7c3aed" stroke-width="3" filter="url(#shadow)" />
+      <text x="780" y="295" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">Transformer</text>
+      <text x="780" y="325" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" fill="#e0e7ff" text-anchor="middle">核心神经网络架构</text>
+      <text x="780" y="355" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#c7d2fe" text-anchor="middle">处理序列关系</text>
+    </g>
+    
+    
+    <g id="connector_4" data-role="connector" data-order="10">
+      <line x1="880" y1="320" x2="940" y2="320" stroke="url(#arrowGradient)" stroke-width="2" marker-end="url(#arrowHead)" />
+    </g>
+    
+    
+    <g id="attention" data-role="process-node" data-order="9">
+      <rect x="940" y="280" width="140" height="80" rx="12" fill="url(#cardGradient)" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)" />
+      <text x="1010" y="312" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">自注意力</text>
+      <text x="1010" y="340" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Self-Attention</text>
+    </g>
+    
+    
+    <g id="connector_5" data-role="connector" data-order="12">
+      <line x1="1080" y1="320" x2="1100" y2="320" stroke="url(#arrowGradient)" stroke-width="2" marker-end="url(#arrowHead)" />
+    </g>
+    
+    
+    <g id="output" data-role="process-node" data-order="11">
+      <rect x="1100" y="280" width="80" height="80" rx="12" fill="url(#cardGradient)" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)" />
+      <text x="1140" y="325" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">输出</text>
+    </g>
+  </g>
+  
+  
+  <g id="annotation_pretrain" data-role="annotation" data-order="13">
+    <rect x="720" y="420" width="120" height="50" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+    <text x="780" y="445" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">预训练</text>
+    <text x="780" y="462" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="#3b82f6" text-anchor="middle">Pre-training</text>
+    <line x1="780" y1="390" x2="780" y2="420" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,2" />
+  </g>
+  
+  <g id="annotation_finetune" data-role="annotation" data-order="14">
+    <rect x="720" y="490" width="120" height="50" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1" />
+    <text x="780" y="515" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" font-weight="bold" fill="#5b21b6" text-anchor="middle">微调</text>
+    <text x="780" y="532" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="#8b5cf6" text-anchor="middle">Fine-tuning</text>
+    <line x1="780" y1="460" x2="780" y2="490" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="4,2" />
+  </g>
+  
+  
+  <g id="bg_pattern" data-role="background" data-order="15">
+    
+    <circle cx="100" cy="150" r="60" fill="#dbeafe" opacity="0.3" />
+    <circle cx="1100" cy="650" r="80" fill="#ede9fe" opacity="0.3" />
+    <circle cx="150" cy="600" r="40" fill="#dbeafe" opacity="0.2" />
+    <circle cx="1050" cy="180" r="50" fill="#ede9fe" opacity="0.2" />
+  </g>
+  
+  
+  <g id="flow_explanation">
+    <text x="600" y="620" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" fill="#64748b" text-anchor="middle">模型通过预训练学习通用语言模式，再通过微调适应特定任务</text>
+  </g>
+</svg>

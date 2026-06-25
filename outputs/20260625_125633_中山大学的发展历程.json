@@ -1,0 +1,332 @@
+{
+  "prompt": "中山大学的发展历程",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "中山大学的发展历程",
+    "language": "zh",
+    "visual_type": "timeline",
+    "narrative": "通过时间轴展示中山大学从1924年创办至今的百年发展历程",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "中山大学的发展历程",
+        "summary": "主标题，展示 infographic 主题",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "subtitle",
+        "role": "subtitle",
+        "label": "百年树人，砥砺前行",
+        "summary": "副标题，概括学校精神",
+        "order": 1,
+        "importance": "secondary",
+        "connects": []
+      },
+      {
+        "id": "event_1924",
+        "role": "event",
+        "label": "1924年 创办",
+        "summary": "国立广东大学成立，开启百年征程",
+        "order": 2,
+        "importance": "primary",
+        "connects": [
+          "event_1924_rename"
+        ]
+      },
+      {
+        "id": "event_1924_rename",
+        "role": "event",
+        "label": "1924年 更名",
+        "summary": "更名为国立中山大学，以孙中山先生命名",
+        "order": 3,
+        "importance": "primary",
+        "connects": [
+          "event_1930s"
+        ]
+      },
+      {
+        "id": "event_1930s",
+        "role": "event",
+        "label": "1930-1940年代",
+        "summary": "快速发展期，学科建设初具规模",
+        "order": 4,
+        "importance": "secondary",
+        "connects": [
+          "event_1952"
+        ]
+      },
+      {
+        "id": "event_1952",
+        "role": "event",
+        "label": "1952年 院系调整",
+        "summary": "全国高校院系调整，奠定现代学科布局",
+        "order": 5,
+        "importance": "secondary",
+        "connects": [
+          "event_1978"
+        ]
+      },
+      {
+        "id": "event_1978",
+        "role": "event",
+        "label": "1978年 改革开放",
+        "summary": "恢复高考，迎来发展新机遇",
+        "order": 6,
+        "importance": "secondary",
+        "connects": [
+          "event_1990s"
+        ]
+      },
+      {
+        "id": "event_1990s",
+        "role": "event",
+        "label": "1990年代",
+        "summary": "进入211工程建设，办学层次提升",
+        "order": 7,
+        "importance": "secondary",
+        "connects": [
+          "event_2017"
+        ]
+      },
+      {
+        "id": "event_2017",
+        "role": "event",
+        "label": "2017年 双一流",
+        "summary": "入选国家双一流建设高校，开启新征程",
+        "order": 8,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "connector_1",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1924年两个事件",
+        "order": 9,
+        "importance": "supporting",
+        "connects": [
+          "event_1924",
+          "event_1924_rename"
+        ]
+      },
+      {
+        "id": "connector_2",
+        "role": "connector",
+        "label": "",
+        "summary": "时间轴连接线",
+        "order": 10,
+        "importance": "supporting",
+        "connects": [
+          "event_1924_rename",
+          "event_1930s"
+        ]
+      },
+      {
+        "id": "connector_3",
+        "role": "connector",
+        "label": "",
+        "summary": "时间轴连接线",
+        "order": 11,
+        "importance": "supporting",
+        "connects": [
+          "event_1930s",
+          "event_1952"
+        ]
+      },
+      {
+        "id": "connector_4",
+        "role": "connector",
+        "label": "",
+        "summary": "时间轴连接线",
+        "order": 12,
+        "importance": "supporting",
+        "connects": [
+          "event_1952",
+          "event_1978"
+        ]
+      },
+      {
+        "id": "connector_5",
+        "role": "connector",
+        "label": "",
+        "summary": "时间轴连接线",
+        "order": 13,
+        "importance": "supporting",
+        "connects": [
+          "event_1978",
+          "event_1990s"
+        ]
+      },
+      {
+        "id": "connector_6",
+        "role": "connector",
+        "label": "",
+        "summary": "时间轴连接线",
+        "order": 14,
+        "importance": "supporting",
+        "connects": [
+          "event_1990s",
+          "event_2017"
+        ]
+      }
+    ],
+    "style_hints": [
+      "使用水平时间轴布局",
+      "重要年份节点使用较大圆形标记",
+      "连接线使用渐变或箭头表示时间流动",
+      "整体配色可选用中山大学校徽的绿色调",
+      "每个事件节点可添加简短的描述文字"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 5.0,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0.0,
+        "duration": 0.5,
+        "reason": "主标题首先出现，建立 infographic 主题"
+      },
+      {
+        "target_id": "subtitle",
+        "effect": "fade-slide",
+        "start": 0.5,
+        "duration": 0.5,
+        "reason": "副标题随后出现，概括学校精神"
+      },
+      {
+        "target_id": "event_1924",
+        "effect": "pop",
+        "start": 1.0,
+        "duration": 0.4,
+        "reason": "首个重要年份节点，使用弹出效果突出"
+      },
+      {
+        "target_id": "connector_1",
+        "effect": "draw-line",
+        "start": 1.4,
+        "duration": 0.3,
+        "reason": "连接创办和更名两个事件"
+      },
+      {
+        "target_id": "event_1924_rename",
+        "effect": "pop",
+        "start": 1.7,
+        "duration": 0.4,
+        "reason": "更名事件，同样重要用弹出效果"
+      },
+      {
+        "target_id": "connector_2",
+        "effect": "draw-line",
+        "start": 2.1,
+        "duration": 0.3,
+        "reason": "时间轴连接线延伸到下一时期"
+      },
+      {
+        "target_id": "event_1930s",
+        "effect": "fade-slide",
+        "start": 2.4,
+        "duration": 0.4,
+        "reason": "次要事件使用淡入滑入效果"
+      },
+      {
+        "target_id": "connector_3",
+        "effect": "draw-line",
+        "start": 2.8,
+        "duration": 0.3,
+        "reason": "继续时间轴流动"
+      },
+      {
+        "target_id": "event_1952",
+        "effect": "fade-slide",
+        "start": 3.1,
+        "duration": 0.4,
+        "reason": "院系调整事件"
+      },
+      {
+        "target_id": "connector_4",
+        "effect": "draw-line",
+        "start": 3.5,
+        "duration": 0.3,
+        "reason": "时间轴连接线"
+      },
+      {
+        "target_id": "event_1978",
+        "effect": "fade-slide",
+        "start": 3.8,
+        "duration": 0.4,
+        "reason": "改革开放时期"
+      },
+      {
+        "target_id": "connector_5",
+        "effect": "draw-line",
+        "start": 4.2,
+        "duration": 0.3,
+        "reason": "时间轴连接线"
+      },
+      {
+        "target_id": "event_1990s",
+        "effect": "fade-slide",
+        "start": 4.5,
+        "duration": 0.4,
+        "reason": "211工程时期"
+      },
+      {
+        "target_id": "connector_6",
+        "effect": "draw-line",
+        "start": 4.9,
+        "duration": 0.3,
+        "reason": "最后一段连接线"
+      },
+      {
+        "target_id": "event_2017",
+        "effect": "pop",
+        "start": 5.2,
+        "duration": 0.5,
+        "reason": "最终重要节点，双一流建设，标志性收尾"
+      }
+    ],
+    "final_frame_rule": "所有时间轴事件和连接线完整显示，标题副标题清晰可读，最终节点突出展示百年发展历程完整呈现"
+  },
+  "metrics": {
+    "elapsed_seconds": 109.69,
+    "geometry_error_count": 1,
+    "animation_error_count": 0,
+    "minimum_font_size": 14.0,
+    "final_text_count": 26,
+    "total_issues": 1
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\最终版\\outputs\\20260625_125633_中山大学的发展历程.svg",
+  "png_path": "E:\\大三下\\NLP作业\\最终版\\outputs\\20260625_125633_中山大学的发展历程.png",
+  "json_path": "E:\\大三下\\NLP作业\\最终版\\outputs\\20260625_125633_中山大学的发展历程.json",
+  "issues": [
+    {
+      "severity": "error",
+      "category": "connector_node_crossing",
+      "element_id": "",
+      "description": "Final frame contains 6 connector paths crossing unrelated essential nodes: [('', 'event_1924_rename'), ('', 'event_1930s'), ('', 'event_1952'), ('', 'event_1978'), ('', 'event_1990s'), ('', 'event_2017')]",
+      "fix_instruction": "Reroute arrows and feedback loops through empty whitespace. Connect only at node edges and never pass through an unrelated process node."
+    }
+  ],
+  "browser_metrics": {
+    "final_text_count": 26,
+    "final_essential_count": 8,
+    "final_container_count": 8,
+    "final_panel_count": 0,
+    "minimum_font_size": 14,
+    "geometry_error_count": 1,
+    "layout_penalty": 100,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 15,
+    "direct_animation_block_count": 7,
+    "direct_animation_animated_block_count": 7,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 7
+  }
+}

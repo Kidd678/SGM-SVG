@@ -1,0 +1,194 @@
+{
+  "prompt": "YouTube has 10 times more videos than TikTok, TikTok has 2 times more than Kuaishou",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "Video Platform Comparison",
+    "language": "en",
+    "visual_type": "comparison",
+    "narrative": "Comparing video counts across YouTube, TikTok, and Kuaishou to show relative platform sizes",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "Video Platform Comparison",
+        "summary": "Main title showing this is a comparison of video platforms",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "subtitle",
+        "role": "subtitle",
+        "label": "Number of Videos by Platform",
+        "summary": "Subtitle explaining the comparison topic",
+        "order": 1,
+        "importance": "secondary",
+        "connects": []
+      },
+      {
+        "id": "youtube",
+        "role": "focal",
+        "label": "YouTube",
+        "summary": "Largest platform with 10x more videos than TikTok",
+        "order": 2,
+        "importance": "primary",
+        "connects": [
+          "connector_yt_tt"
+        ]
+      },
+      {
+        "id": "tiktok",
+        "role": "card",
+        "label": "TikTok",
+        "summary": "Medium platform with 2x more videos than Kuaishou",
+        "order": 3,
+        "importance": "primary",
+        "connects": [
+          "connector_yt_tt",
+          "connector_tt_ks"
+        ]
+      },
+      {
+        "id": "kuaishou",
+        "role": "card",
+        "label": "Kuaishou",
+        "summary": "Smallest platform as baseline for comparison",
+        "order": 4,
+        "importance": "primary",
+        "connects": [
+          "connector_tt_ks"
+        ]
+      },
+      {
+        "id": "connector_yt_tt",
+        "role": "connector",
+        "label": "10×",
+        "summary": "Arrow showing YouTube has 10 times more videos than TikTok",
+        "order": 5,
+        "importance": "primary",
+        "connects": [
+          "youtube",
+          "tiktok"
+        ]
+      },
+      {
+        "id": "connector_tt_ks",
+        "role": "connector",
+        "label": "2×",
+        "summary": "Arrow showing TikTok has 2 times more videos than Kuaishou",
+        "order": 6,
+        "importance": "primary",
+        "connects": [
+          "tiktok",
+          "kuaishou"
+        ]
+      },
+      {
+        "id": "note",
+        "role": "annotation",
+        "label": "Based on estimated video counts",
+        "summary": "Footer note about data source",
+        "order": 7,
+        "importance": "supporting",
+        "connects": []
+      }
+    ],
+    "style_hints": [
+      "Use size to represent relative video counts",
+      "Connectors should show multiplication factors",
+      "Clean comparison layout with clear visual hierarchy"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 4.5,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0.0,
+        "duration": 0.5,
+        "reason": "Primary title appears first to establish the infographic topic"
+      },
+      {
+        "target_id": "subtitle",
+        "effect": "fade-slide",
+        "start": 0.5,
+        "duration": 0.5,
+        "reason": "Subtitle follows to clarify the comparison metric"
+      },
+      {
+        "target_id": "youtube",
+        "effect": "pop",
+        "start": 1.2,
+        "duration": 0.5,
+        "reason": "Largest platform appears as the focal point of comparison"
+      },
+      {
+        "target_id": "tiktok",
+        "effect": "fade-slide",
+        "start": 1.9,
+        "duration": 0.5,
+        "reason": "Medium platform appears after YouTube for sequential comparison"
+      },
+      {
+        "target_id": "kuaishou",
+        "effect": "fade-slide",
+        "start": 2.6,
+        "duration": 0.5,
+        "reason": "Smallest baseline platform appears last in the comparison chain"
+      },
+      {
+        "target_id": "connector_yt_tt",
+        "effect": "draw-line",
+        "start": 3.2,
+        "duration": 0.4,
+        "reason": "10× connector draws after platforms are visible to show relative scale"
+      },
+      {
+        "target_id": "connector_tt_ks",
+        "effect": "draw-line",
+        "start": 3.7,
+        "duration": 0.4,
+        "reason": "2× connector completes the comparison chain"
+      },
+      {
+        "target_id": "note",
+        "effect": "fade",
+        "start": 4.1,
+        "duration": 0.4,
+        "reason": "Supporting annotation fades in last as data source note"
+      }
+    ],
+    "final_frame_rule": "All semantic content remains visible and readable."
+  },
+  "metrics": {
+    "elapsed_seconds": 27.47,
+    "geometry_error_count": 0,
+    "animation_error_count": 0,
+    "minimum_font_size": 14.0,
+    "final_text_count": 12,
+    "total_issues": 0
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_205008_YouTube_has_10_times_more_videos_tha_人工修改.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_205008_YouTube_has_10_times_more_videos_tha_人工修改.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260622_205008_YouTube_has_10_times_more_videos_tha_人工修改.json",
+  "issues": [],
+  "browser_metrics": {
+    "final_text_count": 12,
+    "final_essential_count": 3,
+    "final_container_count": 3,
+    "final_panel_count": 0,
+    "minimum_font_size": 14,
+    "geometry_error_count": 0,
+    "layout_penalty": 0,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 8,
+    "direct_animation_block_count": 3,
+    "direct_animation_animated_block_count": 3,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 3
+  },
+  "human_revision": "“kuaishou”字体有一点超出了圆圈，可以适当缩小字体，同时“10×”和“2×”的图案也适当缩小"
+}

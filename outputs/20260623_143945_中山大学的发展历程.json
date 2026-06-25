@@ -1,0 +1,296 @@
+{
+  "prompt": "中山大学的发展历程",
+  "model_id": "minimax-m2.5",
+  "scene_graph": {
+    "title": "中山大学发展历程",
+    "language": "zh",
+    "visual_type": "timeline",
+    "narrative": "以时间轴形式展示中山大学从1924年创立至今的重要发展阶段",
+    "elements": [
+      {
+        "id": "title",
+        "role": "title",
+        "label": "中山大学发展历程",
+        "summary": "主标题，展示 infographic 主题",
+        "order": 0,
+        "importance": "primary",
+        "connects": []
+      },
+      {
+        "id": "timeline_base",
+        "role": "background",
+        "label": "",
+        "summary": "时间轴基准线，连接各历史节点",
+        "order": 1,
+        "importance": "primary",
+        "connects": [
+          "event_1924",
+          "event_1934",
+          "event_1952",
+          "event_1978",
+          "event_2001",
+          "event_2017"
+        ]
+      },
+      {
+        "id": "event_1924",
+        "role": "event",
+        "label": "1924年 创立",
+        "summary": "孙中山先生将广东大学改名为中山大学，开启百年办学历史",
+        "order": 2,
+        "importance": "primary",
+        "connects": [
+          "timeline_base"
+        ]
+      },
+      {
+        "id": "event_1934",
+        "role": "event",
+        "label": "1934年 发展",
+        "summary": "发展为学科齐全的综合性大学",
+        "order": 3,
+        "importance": "secondary",
+        "connects": [
+          "event_1924"
+        ]
+      },
+      {
+        "id": "event_1952",
+        "role": "event",
+        "label": "1952年 调整",
+        "summary": "全国高校院系调整，奠定现代学科布局",
+        "order": 4,
+        "importance": "secondary",
+        "connects": [
+          "event_1934"
+        ]
+      },
+      {
+        "id": "event_1978",
+        "role": "event",
+        "label": "1978年 改革",
+        "summary": "改革开放后恢复高考，学校迎来新发展机遇",
+        "order": 5,
+        "importance": "secondary",
+        "connects": [
+          "event_1952"
+        ]
+      },
+      {
+        "id": "event_2001",
+        "role": "event",
+        "label": "2001年 985工程",
+        "summary": "入选985工程，进入国家重点建设行列",
+        "order": 6,
+        "importance": "primary",
+        "connects": [
+          "event_1978"
+        ]
+      },
+      {
+        "id": "event_2017",
+        "role": "event",
+        "label": "2017年 双一流",
+        "summary": "入选双一流建设高校，开启世界一流大学建设新征程",
+        "order": 7,
+        "importance": "primary",
+        "connects": [
+          "event_2001"
+        ]
+      },
+      {
+        "id": "connector_1",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1924年到1934年的箭头",
+        "order": 8,
+        "importance": "supporting",
+        "connects": [
+          "event_1924",
+          "event_1934"
+        ]
+      },
+      {
+        "id": "connector_2",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1934年到1952年的箭头",
+        "order": 9,
+        "importance": "supporting",
+        "connects": [
+          "event_1934",
+          "event_1952"
+        ]
+      },
+      {
+        "id": "connector_3",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1952年到1978年的箭头",
+        "order": 10,
+        "importance": "supporting",
+        "connects": [
+          "event_1952",
+          "event_1978"
+        ]
+      },
+      {
+        "id": "connector_4",
+        "role": "connector",
+        "label": "",
+        "summary": "连接1978年到2001年的箭头",
+        "order": 11,
+        "importance": "supporting",
+        "connects": [
+          "event_1978",
+          "event_2001"
+        ]
+      },
+      {
+        "id": "connector_5",
+        "role": "connector",
+        "label": "",
+        "summary": "连接2001年到2017年的箭头",
+        "order": 12,
+        "importance": "supporting",
+        "connects": [
+          "event_2001",
+          "event_2017"
+        ]
+      }
+    ],
+    "style_hints": [
+      "使用红色为主色调，体现中山大学的红色基因",
+      "时间轴采用从左到右的水平布局",
+      "重要年份节点使用较大圆形标记",
+      "每个事件配以简洁的年份和事件名称",
+      "整体风格庄重典雅"
+    ]
+  },
+  "motion_plan": {
+    "total_duration": 7.0,
+    "steps": [
+      {
+        "target_id": "title",
+        "effect": "fade-slide",
+        "start": 0.0,
+        "duration": 0.8,
+        "reason": "主标题首先出现，建立 infographic 主题"
+      },
+      {
+        "target_id": "timeline_base",
+        "effect": "draw-line",
+        "start": 0.8,
+        "duration": 0.8,
+        "reason": "时间轴基准线从左到右绘制，为后续节点提供视觉框架"
+      },
+      {
+        "target_id": "event_1924",
+        "effect": "pop",
+        "start": 1.6,
+        "duration": 0.5,
+        "reason": "首个历史节点以弹出效果强调，重要性最高"
+      },
+      {
+        "target_id": "connector_1",
+        "effect": "draw-line",
+        "start": 2.1,
+        "duration": 0.4,
+        "reason": "连接线从1924年绘制到1934年"
+      },
+      {
+        "target_id": "event_1934",
+        "effect": "fade-slide",
+        "start": 2.5,
+        "duration": 0.5,
+        "reason": "第二个历史节点淡入滑动出现"
+      },
+      {
+        "target_id": "connector_2",
+        "effect": "draw-line",
+        "start": 3.0,
+        "duration": 0.4,
+        "reason": "连接线从1934年绘制到1952年"
+      },
+      {
+        "target_id": "event_1952",
+        "effect": "fade-slide",
+        "start": 3.4,
+        "duration": 0.5,
+        "reason": "第三个历史节点淡入出现"
+      },
+      {
+        "target_id": "connector_3",
+        "effect": "draw-line",
+        "start": 3.9,
+        "duration": 0.5,
+        "reason": "连接线从1952年绘制到1978年"
+      },
+      {
+        "target_id": "event_1978",
+        "effect": "fade-slide",
+        "start": 4.4,
+        "duration": 0.5,
+        "reason": "改革开放节点出现"
+      },
+      {
+        "target_id": "connector_4",
+        "effect": "draw-line",
+        "start": 4.9,
+        "duration": 0.5,
+        "reason": "连接线从1978年绘制到2001年"
+      },
+      {
+        "target_id": "event_2001",
+        "effect": "pop",
+        "start": 5.4,
+        "duration": 0.5,
+        "reason": "985工程节点以弹出效果强调重要性"
+      },
+      {
+        "target_id": "connector_5",
+        "effect": "draw-line",
+        "start": 5.9,
+        "duration": 0.4,
+        "reason": "连接线从2001年绘制到2017年"
+      },
+      {
+        "target_id": "event_2017",
+        "effect": "pop",
+        "start": 6.3,
+        "duration": 0.7,
+        "reason": "双一流节点作为最终节点以强调效果收尾"
+      }
+    ],
+    "final_frame_rule": "所有6个历史事件节点、5条连接线和主标题均保持可见，时间轴从左至右完整展示中山大学百年发展历程"
+  },
+  "metrics": {
+    "elapsed_seconds": 110.81,
+    "geometry_error_count": 0,
+    "animation_error_count": 0,
+    "minimum_font_size": 14.0,
+    "final_text_count": 26,
+    "total_issues": 0
+  },
+  "svg_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260623_143945_中山大学的发展历程.svg",
+  "png_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260623_143945_中山大学的发展历程.png",
+  "json_path": "E:\\大三下\\NLP作业\\codex版\\版本2\\outputs\\20260623_143945_中山大学的发展历程.json",
+  "issues": [],
+  "browser_metrics": {
+    "final_text_count": 26,
+    "final_essential_count": 6,
+    "final_container_count": 6,
+    "final_panel_count": 0,
+    "minimum_font_size": 14,
+    "geometry_error_count": 0,
+    "layout_penalty": 0,
+    "final_frame_time_ms": 8000
+  },
+  "animation_metrics": {
+    "direct_animation_count": 13,
+    "direct_animation_block_count": 6,
+    "direct_animation_animated_block_count": 6,
+    "direct_animation_has_sequence": true,
+    "direct_animation_unique_delays": 6
+  }
+}

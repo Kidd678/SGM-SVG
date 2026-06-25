@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <style id="v2-motion-style">
+@keyframes v2FadeSlide { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes v2Pop { 0% { opacity: 0; transform: scale(.92); } 70% { opacity: 1; transform: scale(1.03); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes v2Fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes v2Draw { from { opacity: 1; stroke-dashoffset: 900; } to { opacity: 1; stroke-dashoffset: 0; } }
+@keyframes v2Highlight { 0% { opacity: 0; } 40% { opacity: 1; filter: brightness(1.18); } 100% { opacity: 1; filter: brightness(1); } }
+#title { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Fade 0.50s ease forwards; animation-delay: 0.00s; }
+#youtube { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 0.50s; }
+#tiktok { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 1.00s; }
+#kuaishou { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2FadeSlide 0.50s ease forwards; animation-delay: 1.50s; }
+#ratio_10x { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.40s ease forwards; animation-delay: 2.00s; }
+#ratio_2x { opacity: 0; transform-box: fill-box; transform-origin: center; stroke-dasharray: 900; stroke-dashoffset: 900; animation: v2Draw 0.40s ease forwards; animation-delay: 2.40s; }
+#subtitle { opacity: 0; transform-box: fill-box; transform-origin: center; animation: v2Fade 0.50s ease forwards; animation-delay: 2.80s; }
+</style><defs>
+    
+    <linearGradient id="youtubeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF0000" />
+      <stop offset="100%" style="stop-color:#CC0000" />
+    </linearGradient>
+    
+    <linearGradient id="tiktokGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#25F4EE" />
+      <stop offset="50%" style="stop-color:#000000" />
+      <stop offset="100%" style="stop-color:#FE2C55" />
+    </linearGradient>
+    
+    <linearGradient id="kuaishouGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF4906" />
+      <stop offset="100%" style="stop-color:#FF0000" />
+    </linearGradient>
+    
+    <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  
+  <rect width="1200" height="800" fill="#f8f9fa" />
+  
+  
+  <g id="title" data-role="title" data-order="0">
+    <text x="600" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#333">视频平台视频数量对比</text>
+  </g>
+  
+  
+  <g id="subtitle" data-role="subtitle" data-order="6">
+    <text x="600" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#888">基于平台公开数据估算</text>
+  </g>
+  
+  
+  
+  <g id="kuaishou" data-role="focal" data-order="3">
+    <circle cx="200" cy="400" r="50" fill="url(#kuaishouGrad)" />
+    <text x="200" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">快手</text>
+    <text x="200" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#666">基准</text>
+  </g>
+  
+  
+  <g id="tiktok" data-role="focal" data-order="2">
+    <circle cx="600" cy="400" r="80" fill="url(#tiktokGrad)" />
+    <text x="600" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">TikTok</text>
+    <text x="600" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#666">2x 快手</text>
+  </g>
+  
+  
+  <g id="youtube" data-role="focal" data-order="1">
+    <circle cx="1000" cy="400" r="140" fill="url(#youtubeGrad)" />
+    <text x="1000" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white">YouTube</text>
+    <text x="1000" y="570" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#666">10x TikTok</text>
+  </g>
+  
+  
+  
+  <g id="ratio_2x" data-role="annotation" data-order="5">
+    <line x1="260" y1="400" x2="510" y2="400" stroke="#666" stroke-width="2" marker-end="url(#arrowHead)" />
+    <rect x="355" y="365" width="50" height="30" rx="15" fill="#333" />
+    <text x="380" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">2x</text>
+  </g>
+  
+  
+  <g id="ratio_10x" data-role="annotation" data-order="4">
+    <line x1="690" y1="400" x2="950" y2="400" stroke="#666" stroke-width="2" marker-end="url(#arrowHead)" />
+    <rect x="790" y="365" width="60" height="30" rx="15" fill="#333" />
+    <text x="820" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">10x</text>
+  </g>
+  
+</svg>
